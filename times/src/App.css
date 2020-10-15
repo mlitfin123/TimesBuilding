@@ -1,6 +1,29 @@
+body{
+  padding-top: 10px;
+  background-color: #E4EDF7;
+}
 header{
+  font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
-  padding: 10px;
+  padding: 1px;
+  font-size: 20px;
+  background-color: #658590;
+}
+.header-table{
+  margin-right: auto;
+  margin-left: auto;
+  border-style: solid;
+  border-color: #500000;
+  border-width: 6px;
+  width: 1400px;
+  left: 40%;
+  right: 30%;
+}
+footer{
+  text-align: center;
+}
+.footer-content{
+  font-size: 10px;
 }
 .main{
   margin: auto;
@@ -8,6 +31,7 @@ header{
 }
 .title{
   text-align: center;
+  padding-top: 50px;
 }
 .title-secondary{
   margin-right: auto;
@@ -15,6 +39,38 @@ header{
   position: absolute;
   left: 40%;
   right: 30%;
+}
+.downtown-title{
+  font-weight: bold;
+  font-size: 13px;
+}
+.downtown-content{
+  font-size: 12px;
+}
+.downtown-images{
+  padding-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  left: 40%;
+  right: 30%;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+.history-content{
+  font-size: 13px;
+  padding-top: 50px;
+}
+.history-images{
+  padding-top: 10px;
+  padding-right: 20px;
+}
+.history-image-content{
+  font-size: 13px;
+}
+.contact-content{
+  font-size: 14px;
+  padding-bottom: 5px;
 }
 .column {
   float: left;

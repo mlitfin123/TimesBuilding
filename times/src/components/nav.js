@@ -36,30 +36,27 @@ const Nav = () => {
 
 return (
     <nav className="navbar navbar-expand-md">
-        <button className="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-        </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-                <li className="nav-item">
-                    <Link onClick={() => setActivePage('home')} className={activePage === 'home' ? 'nav-link active' : 'nav-link'} to="/">Home</Link>
-                </li>
-                <li className="nav-item">
-                    <Link onClick={() => setActivePage('availablespace')} className={activePage === 'availablespace' ? 'nav-link active' : 'nav-link'} to="/availablespace">Available Space</Link>
-                </li>
-                <li className="nav-item">
-                    <Link onClick={() => setActivePage('currenttenants')} className={activePage === 'currenttenants' ? 'nav-link active' : 'nav-link'} to="/currenttenants">Current Tenants</Link>
-                </li>
-                <li className="nav-item">
-                    <Link onClick={() => setActivePage('history')} className={activePage === 'history' ? 'nav-link active' : 'nav-link'} to="/history">History</Link>
-                </li>
-                <li className="nav-item">
-                    <Link onClick={() => setActivePage('downtown')} className={activePage === 'downtown' ? 'nav-link active' : 'nav-link'} to="/downtown">Downtown</Link>
-                </li>
-                <li className="nav-item">
-                    <Link onClick={() => setActivePage('contact')} className={activePage === 'contact' ? 'nav-link active' : 'nav-link'} to="/contact">Contact</Link>
-                </li>
-            </ul>
+            <div className="navbar-nav">
+                <p className="nav-item">
+                    <Link onClick={() => setActivePage('home')} className={activePage === 'home' ? 'nav-link active' : 'nav-link'} to="/"><img src="/images/Logos/home.jpg" alt="Home" height="100px"></img></Link>
+                </p>
+                <p className="nav-item">
+                    <Link onClick={() => setActivePage('availablespace')} className={activePage === 'availablespace' ? 'nav-link active' : 'nav-link'} to="/availablespace"><img src="/images/Logos/availablespace.jpg" alt="Available Space" height="100px"></img></Link>
+                </p>
+                <p className="nav-item">
+                    <Link onClick={() => setActivePage('currenttenants')} className={activePage === 'currenttenants' ? 'nav-link active' : 'nav-link'} to="/currenttenants"><img src="/images/Logos/currenttenants.jpg" alt="Current Tenants" height="100px"></img></Link>
+                </p>
+                <p className="nav-item">
+                    <Link onClick={() => setActivePage('history')} className={activePage === 'history' ? 'nav-link active' : 'nav-link'} to="/history"><img src="/images/Logos/history.jpg" alt="History" height="100px"></img></Link>
+                </p>
+                <p className="nav-item">
+                    <Link onClick={() => setActivePage('downtown')} className={activePage === 'downtown' ? 'nav-link active' : 'nav-link'} to="/downtown"><img src="/images/Logos/downtown.jpg" alt="Downtown" height="100px"></img></Link>
+                </p>
+                <p className="nav-item">
+                    <Link onClick={() => setActivePage('contact')} className={activePage === 'contact' ? 'nav-link active' : 'nav-link'} to="/contact"><img src="/images/Logos/contact.jpg" alt="Contact" height="100px"></img></Link>
+                </p>
+            </div>
         </div>
     </nav>
     );
