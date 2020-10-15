@@ -37,12 +37,12 @@ const Footer = () => {
             <p>_________________________________________________________________________________________________________________________________________________________________________________________</p><br></br>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <div className="navbar-footer">
-                    <Link onClick={() => setActivePage('home')} className={activePage === 'home' ? 'nav-link active' : 'nav-link'} to="/">Home</Link> |
-                    <Link onClick={() => setActivePage('availablespace')} className={activePage === 'availablespace' ? 'nav-link active' : 'nav-link'} to="/availablespace"> Available Space</Link> |
-                    <Link onClick={() => setActivePage('currenttenants')} className={activePage === 'currenttenants' ? 'nav-link active' : 'nav-link'} to="/currenttenants"> Current Tenants</Link> |
-                    <Link onClick={() => setActivePage('history')} className={activePage === 'history' ? 'nav-link active' : 'nav-link'} to="/history"> History</Link> |
-                    <Link onClick={() => setActivePage('downtown')} className={activePage === 'downtown' ? 'nav-link active' : 'nav-link'} to="/downtown"> Downtown</Link> |
-                    <Link onClick={() => setActivePage('contact')} className={activePage === 'contact' ? 'nav-link active' : 'nav-link'} to="/contact"> Contact</Link>
+                    <Link id="navbarHome" onClick={() => setActivePage('home')} className={activePage === 'home' ? 'nav-link active' : 'nav-link'} to="/">Home</Link> |
+                    <Link id="navbarAvailable" onClick={() => setActivePage('availablespace')} className={activePage === 'availablespace' ? 'nav-link active' : 'nav-link'} to="/availablespace"> Available Space</Link> |
+                    <Link id="navbarCurrent" onClick={() => setActivePage('currenttenants')} className={activePage === 'currenttenants' ? 'nav-link active' : 'nav-link'} to="/currenttenants"> Current Tenants</Link> |
+                    <Link id="navbarHistory" onClick={() => setActivePage('history')} className={activePage === 'history' ? 'nav-link active' : 'nav-link'} to="/history"> History</Link> |
+                    <Link id="navbarDowntown" onClick={() => setActivePage('downtown')} className={activePage === 'downtown' ? 'nav-link active' : 'nav-link'} to="/downtown"> Downtown</Link> |
+                    <Link id="navbarContact" onClick={() => setActivePage('contact')} className={activePage === 'contact' ? 'nav-link active' : 'nav-link'} to="/contact"> Contact</Link>
                 </div>
             </div>
             <div className="footer-content">

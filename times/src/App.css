@@ -25,6 +25,60 @@ footer{
 .footer-content{
   font-size: 10px;
 }
+#navbarHome{
+  color: black;
+}
+#navbarHome:hover{
+  color: #810000;
+}
+#navbarHome:active{
+  color: #ca0000;
+}
+#navbarAvailable{
+  color: black;
+}
+#navbarAvailable:hover{
+  color: #810000;
+}
+#navbarAvailable:active{
+  color: #ca0000;
+}
+#navbarCurrent{
+  color: black;
+}
+#navbarCurrent:hover{
+  color: #810000;
+}
+#navbarCurrent:active{
+  color: #ca0000;
+}
+#navbarHistory{
+  color: black;
+}
+#navbarHistory:hover{
+  color: #810000;
+}
+#navbarHistory:active{
+  color: #ca0000;
+}
+#navbarDowntown{
+  color: black;
+}
+#navbarDowntown:hover{
+  color: #810000;
+}
+#navbarDowntown:active{
+  color: #ca0000;
+}
+#navbarContact{
+  color: black;
+}
+#navbarContact:hover{
+  color: #810000
+}
+#navbarContact:active{
+  color: #ca0000
+}
 .main{
   margin: auto;
   width: 50%;
@@ -75,6 +129,12 @@ footer{
 .column {
   float: left;
   padding: 20px;
+}
+.nav-item:hover{
+  transform: scale(1.05);
+}
+.nav-item:active{
+  transform: scale(1.1);
 }
 
 /* Clear floats after the columns */

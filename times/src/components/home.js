@@ -10,6 +10,7 @@ const home = () => {
                             <div className="title">
                                 <h2>Looking to grow?</h2>
                                 <h2>Put your business in the heart of historic downtown Westminster, MD!</h2>
+                                <img src=".\images\AdditionalImages\buildingfront2.jpg" width="450"></img>
                             </div>
                             <div className="title-secondary">
                                 <h3>The Times Building Offers You:</h3>
