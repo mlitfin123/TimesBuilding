@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const secondFloor = () => {
     return (
@@ -17,6 +18,17 @@ const secondFloor = () => {
                                     <li>Building access electronically controlled</li>
                                 </ul>
                         </div>
+                        <div className="title-secondary">
+                                <h3>
+                                    Currently Available Space
+                                </h3>
+                                <h4 id="suite203">
+                                    Suite 203 is currently available for lease. Please inquire for this space by clicking <Link to={"./contact"}>HERE</Link>.
+                                </h4>
+                                <h4 id="suite207">
+                                    Suite 207 is currently available for lease. Please inquire for this space by clicking <Link to={"./contact"}>HERE</Link>.
+                                </h4>
+                            </div>
                     </div>
                 </section>
             </section>

@@ -12,6 +12,9 @@ import home from './components/home';
 import Nav from './components/nav';
 import contact from './components/contact';
 import history from './components/history';
+import admin from './components/admin';
+import basement from './components/basement';
+import mainstreet from './components/mainstreetretail';
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
             <Route exact path="/downtown" component={downtown} />
             <Route exact path="/contact" component={contact} />
             <Route exact path="/history" component={history} />
+            <Route exact path="/basement" component={basement} />
+            <Route exact path="/mainstreet" component={mainstreet} />
+            <Route exact path="/admin" component={admin} />
           </Switch>
         </div>
       </div>

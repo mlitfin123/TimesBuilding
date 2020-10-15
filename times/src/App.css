@@ -25,6 +25,10 @@ footer{
 .footer-content{
   font-size: 10px;
 }
+.form{
+  padding-top: 100px;
+  text-align: center;
+}
 #navbarHome{
   color: black;
 }
