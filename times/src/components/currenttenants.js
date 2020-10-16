@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios'
 
-const current = () => {
+const Current = () => {
+    const [tenant, setTenant] = useState('')
+    const [website, setWebsite] = useState('')
+    const [tenants, setTenants] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+            fetchTenants()
+        }, [])
+
+// Fetch all tenants
+    const fetchTenants = async () => {
+    axios
+        .get('http://localhost:4001/tenants/all')
+        .then(response => {
+        setTenants(response.data)
+
+        setLoading(false)
+    })
+    .catch(error => console.error(`There was an error retrieving the tenant list: ${error}`))
+}
     return (
         <main>
             <section className="content">
@@ -33,4 +54,4 @@ const current = () => {
     )
 }
 
-export default current
+export default Current
