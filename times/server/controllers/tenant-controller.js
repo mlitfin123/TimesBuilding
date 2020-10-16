@@ -2,7 +2,6 @@ const knex = require('./../db')
 
 // Retrieve all tenants
 exports.tenantsAll = async (req, res) => {
-  // Get all tenants from database
     knex
         .select('*')
         .from('active-tenants')
@@ -25,22 +24,20 @@ exports.tenantCreate = async (req, res) => {
         res.json({ message: `${req.body.tenant}\' created.` })
     })
     .catch(err => {
-        res.json({ message: `There was an error creating ${req.body.tenant} book: ${err}` })
+        res.json({ message: `There was an error creating ${req.body.tenant}: ${err}` })
     })
 }
 
 // Remove specific tenant
 exports.tenantDelete = async (req, res) => {
     knex('active-tenants')
-    .where('id', req.body.id) // find correct record based on id
-    .del() // delete the record
+    .where('id', req.body.id)
+    .del()
     .then(() => {
-      // Send a success message in response
         res.json({ message: `Tenant ${req.body.id} deleted.` })
     })
     .catch(err => {
-      // Send a error message in response
-        res.json({ message: `There was an error deleting ${req.body.id} book: ${err}` })
+        res.json({ message: `There was an error deleting ${req.body.id}: ${err}` })
     })
 }
 
@@ -54,7 +51,6 @@ exports.tenantReset = async (req, res) => {
         res.json({ message: 'All tenants cleared.' })
     })
     .catch(err => {
-      // Send a error message in response
         res.json({ message: `There was an error deleting the tenants: ${err}.` })
     })
 }

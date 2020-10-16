@@ -3,9 +3,9 @@ import axios from 'axios'
 
 const Admin = () => {
     const [tenant, setTenant] = useState('')
+    const [space, setSpace] = useState('')
     const [website, setWebsite] = useState('')
     const [tenants, setTenants] = useState([])
-    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
             fetchTenants()
@@ -17,8 +17,6 @@ const Admin = () => {
         .get('http://localhost:4001/all')
         .then(response => {
         setTenants(response.data)
-
-        setLoading(false)
     })
     .catch(error => console.error(`There was an error retrieving the tenant list: ${error}`))
 }
@@ -65,12 +63,45 @@ const handleListReset = () => {
     })
     .catch(error => console.error(`There was an error resetting the tenant list: ${error}`))
 }
+
+const handleSpaceCreate = () => {
+    axios
+        .post('http://localhost:4001/spacecreate', {
+        space: space,
+        is_open: false,
+    })
+        .then(res => {
+        console.log(res.data)
+        })
+        .catch(error => console.error(`There was an error creating the ${space} tenant: ${error}`))
+}
+
+  // Remove space
+    const handleSpaceRemove = (id, tenant) => {
+    axios
+        .put('http://localhost:4001/spacedelete', { id })
+        .then(() => {
+        console.log(`Tenant ${space} removed.`)
+
+    })
+    .catch(error => console.error(`There was an error removing the ${space} space: ${error}`))
+}
+
+  // remove all tenants
+const handleSpaceReset = () => {
+    axios.put('http://localhost:4001/spacereset')
+    .then(() => {
+
+    })
+    .catch(error => console.error(`There was an error resetting the space list: ${error}`))
+}
+
 console.log(tenants)
     return (
         <main>
             <form className="form">
                 <h2>Check the Box to Open the Space:</h2>
-                <input type="checkbox" id="basement" name="basement" onChange=""></input>
+                <input type="checkbox" id="basement" name="basement" value="rendered-checked" onChange=""></input>
                 <label for="basement"> Basement Open</label><br></br>
                 <input type="checkbox" id="suite 101" name="suite 101" onChange=""></input>
                 <label for="suite 101"> Suite 101 Open</label><br></br>
