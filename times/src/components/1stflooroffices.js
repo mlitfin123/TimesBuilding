@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios'
 
-const firstFloor = () => {
+const FirstFloor = () => {
+    const [space, setSpace] = useState([])
+
+    useEffect(() => {
+        fetchSpace()
+    }, [])
+
+    const fetchSpace = async () => {
+        axios
+            .get('http://localhost:4001/spaceall', {
+        })
+            .then(res => {
+            setSpace(res.data)
+            console.log(res.data)
+            })
+            .catch(error => console.error(`There was an error fetching the ${space}: ${error}`))
+    }
+
+    function getOffices(space) {
+        var office = space.is_open;
+        return office;
+      }
+
+    let offices = space.map(getOffices);
+    let suite101 = offices[1]
+    let suite102 = offices[2]
+    let suite103 = offices[3];
+
     return (
         <main>
             <section className="content">
@@ -24,15 +52,32 @@ const firstFloor = () => {
                                 <h3>
                                     Currently Available Space
                                 </h3>
-                                <h4 id="suite101">
-                                    Suite 101 is currently available for lease. Please inquire for this space by clicking <Link to={"./contact"}>HERE</Link>.
-                                </h4>
+                                { suite101 === -1 && (
+                                    <div>
+                                        <h4 id="suite101">
+                                            Suite 101.
+                                        </h4>
+                                        <ul>
+                                            <li>800 sq/ft Office Suite</li>
+                                            <li>3 offices plus reception area</li>
+                                            <li>Private restroom</li>
+                                            <li>Click for <Link to={"./suite101fp"}>Floorplan</Link></li>
+                                            <li>Additional photos and details here</li>
+                                        </ul>
+                                </div>
+                                )
+                                
+                                }
+                                { suite102 === -1 && (
                                 <h4 id="suite102">
-                                    Suite 102 is currently available for lease. Please inquire for this space by clicking <Link to={"./contact"}>HERE</Link>.
-                                </h4>
+                                    Suite 102 is currently available for lease. Check out the <Link to={"./suite102fp"}>Floorplan</Link>.
+                                </h4> )
+                                }
+                                { suite103 === -1 && (
                                 <h4 id="suite103">
-                                    Suite 103 is currently available for lease. Please inquire for this space by clicking <Link to={"./contact"}>HERE</Link>.
-                                </h4>
+                                    Suite 103 is currently available for lease. Check out the <Link to={"./suite103fp"}>Floorplan</Link>.
+                                </h4> )
+                                }
                             </div>
                     </div>
                 </section>
@@ -41,4 +86,4 @@ const firstFloor = () => {
     )
 }
 
-export default firstFloor
+export default FirstFloor

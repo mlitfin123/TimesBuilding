@@ -15,10 +15,6 @@ router.put('/reset', tenantRoutes.tenantReset)
 
 router.get('/spaceall', spaceRoutes.spaceAll)
 
-router.post('/spacecreate', spaceRoutes.spaceCreate)
-
-router.put('/spacedelete', spaceRoutes.spaceDelete)
-
-router.put('/spacereset', spaceRoutes.spaceReset)
+router.post('/spacemodify', spaceRoutes.spaceModify)
 
 module.exports = router

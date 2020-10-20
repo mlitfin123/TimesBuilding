@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios'
 
-const mainstreet = () => {
+const Mainstreet = () => {
+    const [space, setSpace] = useState([])
+
+    useEffect(() => {
+        fetchSpace()
+    }, [])
+
+    const fetchSpace = async () => {
+        axios
+            .get('http://localhost:4001/spaceall', {
+        })
+            .then(res => {
+            setSpace(res.data)
+            console.log(res.data)
+            })
+            .catch(error => console.error(`There was an error fetching the ${space}: ${error}`))
+    }
+
+    function getOffices(space) {
+        var office = space.is_open;
+        return office;
+      }
+
+    let offices = space.map(getOffices);
+    let main61 = offices[6]
+    let main65 = offices[7]
+
     return (
         <main>
             <section className="content">
@@ -22,6 +49,7 @@ const mainstreet = () => {
                                 <h3>
                                     Currently Available Space
                                 </h3>
+                                { main65 === -1 && (
                                 <div id="65emain">
                                     <h4>
                                         65 East Main Storefront (Retail or Office).
@@ -34,10 +62,12 @@ const mainstreet = () => {
                                         <li>ADA approved restroom</li>
                                         <li>Storage closet</li>
                                         <li>Move in condition</li>
-                                        <li>Click for floorplan</li>
+                                        <li>Click for <Link to={"./main65fp"}>Floorplan</Link></li>
                                         <li>Additional details and photos here</li>
                                     </ul>
-                                </div>
+                                </div> )
+                                }
+                                { main61 === -1 && (
                                 <div id="61emain">
                                     <h4>
                                         61 East Main Storefront.
@@ -47,9 +77,10 @@ const mainstreet = () => {
                                         <li>Cozy retail space</li>
                                         <li>New ADA approved restroom</li>
                                         <li>Storage closet</li>
-                                        <li>Click for floorplan</li>
+                                        <li>Click for <Link to={"./main61fp"}>Floorplan</Link></li>
                                     </ul>
-                                </div>
+                                </div> )
+                                }
                             </div>
                     </div>
                 </section>
@@ -58,4 +89,4 @@ const mainstreet = () => {
     )
 }
 
-export default mainstreet
+export default Mainstreet
