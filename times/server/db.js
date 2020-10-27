@@ -37,6 +37,7 @@ function tenantSchema() {knex.schema
             console.error(`There was an error setting up the database: ${error}`)
         })
     }
+
 function spaceSchema() {knex.schema
     .hasTable('open-offices')
     .then((exists) => {
