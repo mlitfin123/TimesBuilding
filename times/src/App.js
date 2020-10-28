@@ -23,6 +23,7 @@ import Suite207 from './components/suite207fp';
 import Main61fp from './components/main61fp';
 import Main65fp from './components/main65fp';
 import Basementfp from './components/basementfp';
+import Login from './components/login';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
             <Route exact path="/main65fp" component={Main65fp} />
             <Route exact path="/basementfp" component={Basementfp} />
             <Route exact path="/admin" component={Admin} />
+            <Route exact path="/login" component={Login} />
           </Switch>
         </div>
       </div>

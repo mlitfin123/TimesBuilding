@@ -4,6 +4,7 @@ const compression = require('compression')
 const cors = require('cors')
 const helmet = require('helmet')
 const tenantRouter = require('./routes/routes.js')
+const authRouter = require('./routes/auth-routes.js')
 const PORT = process.env.PORT || 4001
 const app = express()
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json())
 
 // Implement route
 app.use('/', tenantRouter)
+app.use('/', authRouter)
 
 // If 500 error
 app.use(function (err, req, res, next) {
