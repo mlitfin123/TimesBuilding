@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cookieParser = require("cookie-parser");
 const compression = require('compression')
 const cors = require('cors')
 const helmet = require('helmet')
@@ -9,11 +10,15 @@ const PORT = process.env.PORT || 4001
 const app = express()
 
 // Apply middleware
-app.use(cors())
+app.use(cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST"],
+    credentials: true,
+}))
 app.use(helmet())
 app.use(compression())
-app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(cookieParser());
 
 // Implement route
 app.use('/', tenantRouter)

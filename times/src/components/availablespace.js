@@ -23,7 +23,7 @@ const Available = () => {
     function getOffices(space) {
         var office = space.is_open;
         return office;
-      }
+    }
 
     let offices = space.map(getOffices);
     let firstFloor = [offices[1], offices[2], offices[3]]

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Axios from "axios";
 import './App.css';
 import Current from './components/currenttenants';
 import downtown from './components/downtown';
@@ -24,9 +25,19 @@ import Main61fp from './components/main61fp';
 import Main65fp from './components/main65fp';
 import Basementfp from './components/basementfp';
 import Login from './components/login';
+import PrivateRoute from './PrivateRoute';
+import { AuthContext } from "./context/auth";
 
-function App() {
+function App(props) {
+  const [authTokens, setAuthTokens] = useState();
+  
+  const setTokens = (data) => {
+    localStorage.setItem("tokens", JSON.stringify(data));
+    setAuthTokens(data);
+  }
+
   return (
+    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
     <Router>
       <Header />
       <div className="row">
@@ -53,13 +64,14 @@ function App() {
             <Route exact path="/main61fp" component={Main61fp} />
             <Route exact path="/main65fp" component={Main65fp} />
             <Route exact path="/basementfp" component={Basementfp} />
-            <Route exact path="/admin" component={Admin} />
+            <PrivateRoute path="/admin" component={Admin} />
             <Route exact path="/login" component={Login} />
           </Switch>
         </div>
       </div>
       <Footer />
     </Router>
+    </AuthContext.Provider>
   );
 }
 

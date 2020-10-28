@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useAuth } from "../context/auth";
 
 const Admin = () => {
     const [tenant, setTenant] = useState('')
     const [space, setSpace] = useState([])
     const [website, setWebsite] = useState('')
     const [tenants, setTenants] = useState([])
+    const { setAuthTokens } = useAuth();
 
     useEffect(() => {
             fetchTenants()
             fetchSpace()
         }, [])
 
+    function logOut() {
+        setAuthTokens();
+    }
 
 // Fetch all tenants
     const fetchTenants = async () => {
@@ -125,6 +130,9 @@ const handleSpaceModify = (id, space) => {
                 {tenants.length > 0 && (
                     <button className="btn btn-reset" onClick={handleListReset}>Delete All Tenants.</button>
                 )}
+                <br></br>
+                <br></br>
+                <button onClick={logOut}>Log out</button>
             </div>
         </main>
     )
