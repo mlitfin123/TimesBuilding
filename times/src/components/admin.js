@@ -6,6 +6,7 @@ const Admin = () => {
     const [tenant, setTenant] = useState('')
     const [space, setSpace] = useState([])
     const [website, setWebsite] = useState('')
+    const [image, setImage] = useState('')
     const [tenants, setTenants] = useState([])
     const { setAuthTokens } = useAuth();
 
@@ -33,6 +34,7 @@ const Admin = () => {
         .post('http://localhost:4001/create', {
         tenant: tenant,
         website: website,
+        image: image,
     })
         .then(res => {
         console.log(res.data)
@@ -42,7 +44,7 @@ const Admin = () => {
  // Submit new tenant
     const handleTenantSubmit = () => {
 
-    if (tenant.length > 0 && website.length > 0) {
+    if (tenant.length > 0) {
         handleTenantCreate()
         
         console.log(`Tenant ${tenant} and website ${website} added.`)
@@ -108,15 +110,15 @@ const handleSpaceModify = (id, space) => {
                         <h2>Enter the Name and Website of the New Tenant:</h2>
                             <fieldset>
                                 <label className="form-label" htmlFor="tenant">Enter New Tenant: </label>
-                                <input className="form-input" type="text" id="tenant" name="tenant" value={tenant} onChange={(e) => setTenant(e.currentTarget.value)} />
+                                <input className="form-input" type="text" id="tenant" name="tenant" value={tenant} placeholder="Tenant Name" required="true" onChange={(e) => setTenant(e.currentTarget.value)} />
                             </fieldset>
                             <fieldset>
                                 <label className="form-label" htmlFor="website">Enter Website for Tenant: </label>
-                                <input className="form-input" type="text" id="website" name="website" value={website} onChange={(e) => setWebsite(e.currentTarget.value)} />
+                                <input className="form-input" type="text" id="website" name="website" value={website} placeholder="Website" onChange={(e) => setWebsite(e.currentTarget.value)} />
                             </fieldset>
                             <fieldset>
                                 <label className="form-label" htmlFor="image">Enter Image for Tenant: </label>
-                                <input type="file"  accept="image/*" name="image" id="file"></input>
+                                <input type="file"  accept="image/*" name="image" id="file" value={image} onChange={(e) => setImage(e.currentTarget.value)}></input>
                             </fieldset>
                         </div>
                     </div>

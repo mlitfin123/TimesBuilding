@@ -21,8 +21,8 @@ function tenantSchema() {knex.schema
             return knex.schema.createTable('active-tenants', (table)  => {
                 table.increments('id').primary()
                 table.string('tenant').notNullable()
-                table.string('website').nullable()
-                table.binary("images").nullable()
+                table.string('website')
+                table.binary("images")
             })
             .then(() => {
                 console.log('Tenant table Successfully Created!')

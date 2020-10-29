@@ -19,6 +19,7 @@ exports.tenantCreate = async (req, res) => {
     .insert({
         'tenant': req.body.tenant,
         'website': req.body.website,
+        'images': req.body.image,
     })
     .then(() => {
         res.json({ message: `${req.body.tenant}\' created.` })

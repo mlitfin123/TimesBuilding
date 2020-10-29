@@ -12,7 +12,7 @@ const app = express()
 // Apply middleware
 app.use(cors({
     origin: ["http://localhost:3000"],
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "PUT"],
     credentials: true,
 }))
 app.use(helmet())
