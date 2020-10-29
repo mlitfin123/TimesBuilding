@@ -27,6 +27,12 @@ import Basementfp from './components/basementfp';
 import Login from './components/login';
 import PrivateRoute from './PrivateRoute';
 import { AuthContext } from "./context/auth";
+import Suite202 from './components/suite202fp';
+import Suite206 from './components/suite206fp';
+import Suite206a from './components/suite206afp';
+import Suite206b from './components/suite206bfp';
+import Suite209 from './components/suite209fp';
+import Suite208 from './components/suite208fp';
 
 function App(props) {
   const [authTokens, setAuthTokens] = useState();
@@ -59,8 +65,15 @@ function App(props) {
             <Route exact path="/suite101fp" component={Suite101} />
             <Route exact path="/suite102fp" component={Suite102} />
             <Route exact path="/suite103fp" component={Suite103} />
+            <Route exact path="/suite202fp" component={Suite202} />
             <Route exact path="/suite203fp" component={Suite203} />
+            <Route exact path="/suite203fp" component={Suite203} />
+            <Route exact path="/suite206fp" component={Suite206} />
+            <Route exact path="/suite206afp" component={Suite206a} />
+            <Route exact path="/suite206bfp" component={Suite206b} />
+            <Route exact path="/suite209fp" component={Suite209} />
             <Route exact path="/suite207fp" component={Suite207} />
+            <Route exact path="/suite208fp" component={Suite208} />
             <Route exact path="/main61fp" component={Main61fp} />
             <Route exact path="/main65fp" component={Main65fp} />
             <Route exact path="/basementfp" component={Basementfp} />

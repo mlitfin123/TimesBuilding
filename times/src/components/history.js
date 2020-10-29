@@ -12,7 +12,6 @@ const history = () => {
             </div>
             <div className="history-image-content">
                 <table>
-
                     <tr>
                         <td><img className="history-images" src=".\images\AdditionalImages\Times_Building_1943_cropped (Small).jpg" alt="Times Building" width="500px"></img></td>
                         <td><p>A sketch of The Times Building from a 1943 calendar.</p></td>

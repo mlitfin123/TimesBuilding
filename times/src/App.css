@@ -141,6 +141,20 @@ footer{
   transform: scale(1.1);
 }
 
+.flooravailability{
+  padding: 30px;
+  float: left;
+  text-decoration: underline;
+}
+
+#firstFloorfp{
+  float: right;
+}
+
+#secondFloorfp{
+  float: right;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";

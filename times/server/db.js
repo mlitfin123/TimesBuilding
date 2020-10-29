@@ -71,17 +71,62 @@ function spaceSchema() {knex.schema
                         res.json({ success: true, message: 'ok' });     // respond back to request
                     })
                     knex('open-offices').insert(
-                    {space: "suite203", is_open: "-1"})
+                    {space: "suite201", is_open: "-1"})
                     .then( function (result) {
                         res.json({ success: true, message: 'ok' });     // respond back to request
-                    }),
+                    })
+                    knex('open-offices').insert(
+                    {space: "suite202", is_open: "-1"})
+                    .then( function (result) {
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    knex('open-offices').insert(
+                    {space: "suite203/204", is_open: "-1"})
+                    .then( function (result) {
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    knex('open-offices').insert(
+                    {space: "suite205", is_open: "-1"})
+                    .then( function (result) {
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    knex('open-offices').insert(
+                    {space: "suite206", is_open: "-1"})
+                    .then( function (result) {
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    knex('open-offices').insert(
+                    {space: "suite206a", is_open: "-1"})
+                    .then( function (result) {
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    knex('open-offices').insert(
+                    {space: "suite206b", is_open: "-1"})
+                    .then( function (result) {
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
                     knex('open-offices').insert(
                     {space: "suite207", is_open: "-1"})
                     .then( function (result) {
                         res.json({ success: true, message: 'ok' });     // respond back to request
                     })
                     knex('open-offices').insert(
+                    {space: "suite208", is_open: "-1"})
+                    .then( function (result) {
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    knex('open-offices').insert(
+                    {space: "suite209", is_open: "-1"})
+                    .then( function (result) {
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    knex('open-offices').insert(
                     {space: "61eastmain", is_open: "-1"})
+                    .then( function (result) {
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    knex('open-offices').insert(
+                    {space: "61.5 eastmain", is_open: "-1"})
                     .then( function (result) {
                         res.json({ success: true, message: 'ok' });     // respond back to request
                     })

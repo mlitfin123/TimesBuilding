@@ -27,9 +27,9 @@ const Available = () => {
 
     let offices = space.map(getOffices);
     let firstFloor = [offices[1], offices[2], offices[3]]
-    let secondFloor = [offices[4], offices[5]];
+    let secondFloor = [offices[4], offices[5], offices[6], offices[7], offices[8], offices[9], offices[10], offices[11], offices[12], offices[13]];
     let basement = offices[0];
-    let mainRetail = [offices[6], offices[7]];
+    let mainRetail = [offices[14], offices[15], offices[16]];
 
     return (
         <main>
@@ -48,25 +48,26 @@ const Available = () => {
                 </h4> )
                 }
                 {(firstFloor[0] + firstFloor[1] + firstFloor[2]) !== 3 && (
-                <h4 id="1stFloor">
-                    There is current 1st floor availability. Click <Link to={"./1stFloor"}>here</Link> to view more details.
+                <h4 id="firstFloor" className="flooravailability">
+                    There is current 1st Floor availability. Click <Link to={"./1stFloor"}>here</Link> to view more details.
                 </h4> )
                 }
-                {(secondFloor[0] + secondFloor[1]) !== 2 && (
-                <h4 id="2ndFloor">
-                    There is current 2nd floor availability. Click <Link to={"./2ndFloor"}>here</Link> to view more details.
+                {(secondFloor[0] + secondFloor[1] + secondFloor[2] + secondFloor[3] + secondFloor[4] + secondFloor[5] + secondFloor[6] + secondFloor[7] + secondFloor[8] + secondFloor[9]) !== 10 && (
+                <h4 id="secondFloor" className="flooravailability">
+                    There is current 2nd Floor availability. Click <Link to={"./2ndFloor"}>here</Link> to view more details.
                 </h4> )
                 }
                 { basement === -1 && (
-                <h4 id="basement">
-                    The basement location is currently available for lease. Click <Link to={"./basement"}>here</Link> to view more details.
+                <h4 id="basement" className="flooravailability">
+                    The Basement location is currently available for lease. Click <Link to={"./basement"}>here</Link> to view more details.
                 </h4> )
                 }
-                {(mainRetail[0] + mainRetail[1]) !== 2 && (
-                <h4 id="main">
+                {(mainRetail[0] + mainRetail[1] + mainRetail[2]) !== 3 && (
+                <h4 id="main" className="flooravailability">
                     There is current Main Street availability. Click <Link to={"./mainstreet"}>here</Link> to view more details.
                 </h4> )
                 }
+                <img src=".\images\AdditionalImages\hallway.jpg" alt="Floorplan" height="450"></img>
             </div>
         </main>
     )

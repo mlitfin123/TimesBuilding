@@ -23,7 +23,7 @@ const FirstFloor = () => {
     function getOffices(space) {
         var office = space.is_open;
         return office;
-      }
+    }
 
     let offices = space.map(getOffices);
     let suite101 = offices[1]
@@ -32,6 +32,7 @@ const FirstFloor = () => {
 
     return (
         <main>
+            <img id="firstFloorfp" src=".\images\1stFloor\1st floor map.jpg" alt="Floorplan" height="600"></img>
             <section className="content">
                 <section className="column">
                     <div className="row">
@@ -78,7 +79,7 @@ const FirstFloor = () => {
                                     Suite 103 is currently available for lease. Check out the <Link to={"./suite103fp"}>Floorplan</Link>.
                                 </h4> )
                                 }
-                            </div>
+                        </div>
                     </div>
                 </section>
             </section>

@@ -23,14 +23,16 @@ const Mainstreet = () => {
     function getOffices(space) {
         var office = space.is_open;
         return office;
-      }
+    }
 
     let offices = space.map(getOffices);
-    let main61 = offices[6]
-    let main65 = offices[7]
+    let main61 = offices[14]
+    let main61half = offices[15]
+    let main65 = offices[16]
 
     return (
         <main>
+            <img id="firstFloorfp" src=".\images\1stFloor\1st floor map.jpg" alt="Floorplan" height="600"></img>
             <section className="content">
                 <section className="column">
                     <div className="row">
@@ -78,6 +80,18 @@ const Mainstreet = () => {
                                         <li>New ADA approved restroom</li>
                                         <li>Storage closet</li>
                                         <li>Click for <Link to={"./main61fp"}>Floorplan</Link></li>
+                                    </ul>
+                                </div> )
+                                }
+                                { main61half === -1 && (
+                                <div id="61halfemain">
+                                    <h4>
+                                        61 1/2 East Main.
+                                    </h4>
+                                    <ul>
+                                        <li>1700 sq/ft wine bar / restaurant space</li>
+                                        <li>Full commercial kitchen, plenty of seating, bar and ADA compliant restrooms</li>
+                                        <li>Tastefully decorated with historic charm</li>
                                     </ul>
                                 </div> )
                                 }
