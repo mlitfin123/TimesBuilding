@@ -52,38 +52,157 @@ function spaceSchema() {
         .then(() => {
             knex('open-offices').insert(
                 {space: "basement", is_open: "-1"})
+                .then( async function (res) {
+                    await(5)
+                    res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite101", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite102", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite103", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite201", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite202", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite203/204", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite205", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite206", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite206a", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite206b", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite207", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite208", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "suite209", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "61eastmain", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "61.5 eastmain", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
                     knex('open-offices').insert(
                     {space: "65eastmain", is_open: "-1"})
+                    .then( async function (res) {
+                        await(5)
+                        res.json({ success: true, message: 'ok' });     // respond back to request
+                    })
+                    .catch((error) => {
+                        console.error(`There was an error creating table: ${error}`)
+                    })
             console.log('Spaces Table Successfully Created!')
         })
         .catch((error) => {
@@ -111,7 +230,12 @@ function login() {knex.schema
         .then(() => {
             knex('users').insert(
                 {username: "admin", password: "password"})
-                console.log("user added")
+                .then( function (res) {
+                    res.json({ success: true, message: 'ok' });     // respond back to request
+                })
+                .catch((error) => {
+                    console.error(`There was an error creating table: ${error}`)
+                })
             console.log('Tenant table Successfully Created!')
         })
         .catch((error) => {
