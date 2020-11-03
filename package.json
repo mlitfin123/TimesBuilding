@@ -33,7 +33,7 @@
     "add-db": "cd build && mkdir db && cd db && echo db.sqlite && cd ../..",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "concurrently \"serve -s build\" \"npm run start-server\" --kill-others --kill-others-on-fail"
+    "serve": "npm run build && npm run add-db && concurrently \"serve -s build\" \"npm run start-server\" --kill-others --kill-others-on-fail"
   },
   "eslintConfig": {
     "extends": "react-app"
