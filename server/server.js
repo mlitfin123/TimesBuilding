@@ -1,9 +1,7 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const cookieParser = require("cookie-parser");
 const compression = require('compression')
 const cors = require('cors')
-const helmet = require('helmet')
 const tenantRouter = require('./routes/routes.js')
 const authRouter = require('./routes/auth-routes.js')
 const PORT = process.env.PORT || 4001
@@ -14,9 +12,8 @@ app.use(cors({
     methods: ["GET", "POST", "PUT"],
     credentials: true,
 }))
-app.use(helmet())
 app.use(compression())
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(cookieParser());
 
 // Implement route

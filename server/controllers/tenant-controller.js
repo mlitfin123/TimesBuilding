@@ -1,10 +1,11 @@
 const knex = require('./../db')
+const connection = require('../config/connection.js');
 
 // Retrieve all tenants
 exports.tenantsAll = async (req, res) => {
     knex
         .select('*')
-        .from('active-tenants')
+        .from('active_tenants')
         .then(data => {
         res.json(data)
     })
@@ -15,7 +16,7 @@ exports.tenantsAll = async (req, res) => {
 
   // Add new tenant to database
 exports.tenantCreate = async (req, res) => {
-    knex('active-tenants')
+    knex('active_tenants')
     .insert({
         'tenant': req.body.tenant,
         'website': req.body.website,
@@ -31,7 +32,7 @@ exports.tenantCreate = async (req, res) => {
 
 // Remove specific tenant
 exports.tenantDelete = async (req, res) => {
-    knex('active-tenants')
+    knex('active_tenants')
     .where('id', req.body.id)
     .del()
     .then(() => {
@@ -46,7 +47,7 @@ exports.tenantDelete = async (req, res) => {
 exports.tenantReset = async (req, res) => {
     knex
     .select('*')
-    .from('active-tenants')
+    .from('active_tenants')
     .truncate()
     .then(() => {
         res.json({ message: 'All tenants cleared.' })

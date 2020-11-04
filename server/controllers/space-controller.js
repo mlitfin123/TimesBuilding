@@ -1,7 +1,7 @@
 const knex = require('./../db')
 
 exports.spaceModify = async (req, res) => {
-    knex.raw(`UPDATE "open-offices" SET is_open = is_open * -1 WHERE id = ${req.body.id}; SELECT * FROM "open-offices"`)
+    knex.raw(`UPDATE "open_offices" SET is_open = is_open * -1 WHERE id = ${req.body.id}; SELECT * FROM "open_offices"`)
         .then(data => {
         res.json(data)
     })
@@ -14,7 +14,7 @@ exports.spaceModify = async (req, res) => {
 exports.spaceAll = async (req, res) => {
     knex
         .select('*')
-        .from('open-offices')
+        .from('open_offices')
         .then(data => {
         res.json(data)
     })
