@@ -4,14 +4,19 @@
 // // Get the location of database.sqlite file
 // const dbPath = path.resolve(__dirname, '../build/db/db.sqlite')
 
+var mysql = require('mysql');
+var knex = mysql.createConnection("mysql://rqvvax6aty2vtjom:e2bfjo211ui074jf@etdq12exrvdjisg6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v616tm7lugqawl9p");
+
+knex.connect();
+
 // Create connection to database
-const knex = require('knex')({
-    client: 'mysql',
-    connection: {
-        database: "mysql://rqvvax6aty2vtjom:e2bfjo211ui074jf@etdq12exrvdjisg6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v616tm7lugqawl9p"
-    },
-    useNullAsDefault: true
-})
+// const knex = require('knex')({
+//     client: 'mysql',
+//     connection: {
+//         database: "mysql://rqvvax6aty2vtjom:e2bfjo211ui074jf@etdq12exrvdjisg6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v616tm7lugqawl9p"
+//     },
+//     useNullAsDefault: true
+// })
 
 function tenantSchema() {knex.schema
         .hasTable('active_tenants')

@@ -30,7 +30,7 @@
   "scripts": {
     "start-server": "nodemon server/server.js --watch server/*",
     "start-front": "react-scripts start",
-    "start": "concurrently \"npm run start-server\" \"serve -s build\" --kill-others --kill-others-on-fail",
+    "start": "concurrently \"npm run start-server\" \"npm run start-front\" --kill-others --kill-others-on-fail",
     "build": "react-scripts build",
     "add-db": "cd build && mkdir db && cd db && echo db.sqlite && cd ../..",
     "test": "react-scripts test",
