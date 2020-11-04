@@ -1,5 +1,5 @@
 // const path = require('path')
-require ('./config/config.js')
+// require ('./config/config.js')
 
 // // Get the location of database.sqlite file
 // const dbPath = path.resolve(__dirname, '../build/db/db.sqlite')
