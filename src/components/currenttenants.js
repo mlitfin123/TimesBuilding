@@ -11,7 +11,7 @@ const Current = () => {
 // Fetch all tenants
     const fetchTenants = async () => {
     axios
-        .get('http://localhost:4001/all')
+        .get('/all')
         .then(response => {
         setTenants(response.data)
     })

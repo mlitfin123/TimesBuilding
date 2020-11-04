@@ -22,7 +22,7 @@ const Admin = () => {
 // Fetch all tenants
     const fetchTenants = async () => {
     axios
-        .get('http://localhost:4001/all')
+        .get('/all')
         .then(response => {
         setTenants(response.data)
     })
@@ -31,7 +31,7 @@ const Admin = () => {
   // Create new tenant
     const handleTenantCreate = () => {
     axios
-        .post('http://localhost:4001/create', {
+        .post('/create', {
         tenant: tenant,
         website: website,
         image: image,
@@ -54,7 +54,7 @@ const Admin = () => {
   // Remove tenant
     const handleTenantRemove = (id, tenant) => {
     axios
-        .put('http://localhost:4001/delete', { id })
+        .put('/delete', { id })
         .then(() => {
         console.log(`Tenant ${tenant} removed.`)
 
@@ -65,7 +65,7 @@ const Admin = () => {
 
   // remove all tenants
 const handleListReset = () => {
-    axios.put('http://localhost:4001/reset')
+    axios.put('/reset')
     .then(() => {
 
         fetchTenants()
@@ -75,7 +75,7 @@ const handleListReset = () => {
 
 const fetchSpace = async () => {
     axios
-        .get('http://localhost:4001/spaceall', {
+        .get('/spaceall', {
     })
         .then(res => {
         setSpace(res.data)
@@ -86,7 +86,7 @@ const fetchSpace = async () => {
 
 const handleSpaceModify = (id, space) => {
     axios
-        .post('http://localhost:4001/spacemodify', { id })
+        .post('/spacemodify', { id })
         .then(res => {
             fetchSpace()
             console.log(res)

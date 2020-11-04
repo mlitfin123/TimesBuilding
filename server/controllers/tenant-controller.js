@@ -1,5 +1,4 @@
 const knex = require('./../db')
-const connection = require('../config/connection.js');
 
 // Retrieve all tenants
 exports.tenantsAll = async (req, res) => {
@@ -23,7 +22,7 @@ exports.tenantCreate = async (req, res) => {
         'images': req.body.image,
     })
     .then(() => {
-        res.json({ message: `${req.body.tenant}\' created.` })
+        res.json({ message: `${req.body.tenant}' created.` })
     })
     .catch(err => {
         res.json({ message: `There was an error creating ${req.body.tenant}: ${err}` })

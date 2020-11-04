@@ -12,7 +12,7 @@ const SecondFloor = () => {
 
     const fetchSpace = async () => {
         axios
-            .get('http://localhost:4001/spaceall', {
+            .get('/spaceall', {
         })
             .then(res => {
             setSpace(res.data)
