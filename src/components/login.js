@@ -13,7 +13,7 @@ export default function Login() {
     const { setAuthTokens } = useAuth();
 
     const login = () => {
-        axios.post("http://localhost:4001/loggedin", {
+        axios.post("https://timesbuilding.herokuapp.com/loggedin", {
             username: username,
             password: password,
         })
