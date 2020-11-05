@@ -24,18 +24,17 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
-    "sqlite3": "^5.0.0"
+    "react-scripts": "3.4.3"
   },
   "scripts": {
     "start-server": "nodemon server/server.js --watch server/*",
-    "start-front": "react-scripts start",
-    "start": "concurrently \"npm run start-server\" \"serve -s build\" --kill-others --kill-others-on-fail",
-    "build": "react-scripts build",
-    "add-db": "cd build && mkdir db && cd db && echo db.sqlite && cd ../..",
+    "start-front": "cd client && react-scripts start",
+    "start": "concurrently \"npm run start-server\" \"npm run start-front\" --kill-others --kill-others-on-fail",
+    "build": "cd client && react-scripts build",
+    "start serve": "cd client && serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "concurrently \"npm run start-server\" \"serve -s build\" --kill-others --kill-others-on-fail"
+    "serve": "concurrently \"npm run start-server\" \"npm run start serve\" --kill-others --kill-others-on-fail"
   },
   "eslintConfig": {
     "extends": "react-app"

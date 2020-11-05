@@ -1,7 +1,7 @@
 const knex = require('./../db')
 
 exports.spaceModify = async (req, res) => {
-    knex.update(`UPDATE "open_offices" SET is_open = is_open * -1 WHERE id = ${req.body.id}; SELECT * FROM "open_offices"`)
+    knex.raw(`UPDATE open_offices SET is_open = is_open * -1 WHERE id = ${req.body.id};`)
         .then(data => {
         res.json(data)
     })
