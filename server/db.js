@@ -1,5 +1,3 @@
-const JAWSDB_URL = require('./config/config')
-
 // const path = require('path')
 
 // // Get the location of database.sqlite file
@@ -9,7 +7,7 @@ const JAWSDB_URL = require('./config/config')
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-        database: JAWSDB_URL
+        database: "mysql://rqvvax6aty2vtjom:e2bfjo211ui074jf@etdq12exrvdjisg6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v616tm7lugqawl9p"
     },
     useNullAsDefault: true
 })
