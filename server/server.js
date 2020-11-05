@@ -2,6 +2,7 @@ const express = require('express')
 const cookieParser = require("cookie-parser");
 const compression = require('compression')
 const cors = require('cors')
+const path = require('path')
 const tenantRouter = require('./routes/routes.js')
 const authRouter = require('./routes/auth-routes.js')
 const PORT = process.env.PORT || 4001
@@ -15,10 +16,15 @@ app.use(cors({
 app.use(compression())
 app.use(express.json())
 app.use(cookieParser());
+app.use(express.static("client/build"));
 
 // Implement route
 app.use('/', tenantRouter)
 app.use('/', authRouter)
+
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // If 500 error
 app.use(function (err, req, res, next) {
