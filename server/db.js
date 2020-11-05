@@ -7,7 +7,12 @@
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-        database: "mysql://rqvvax6aty2vtjom:e2bfjo211ui074jf@etdq12exrvdjisg6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v616tm7lugqawl9p"
+        multipleStatements: true, 
+        host: "kavfu5f7pido12mr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        port: 3306,
+        user: "vv1d6b2e3s33ltsh",
+        password: "g0nnviozqvq9vwf5",
+        database: "eqfuno5vvqb4qyiq"
     },
     useNullAsDefault: true
 })
