@@ -52,32 +52,32 @@ function App(props) {
         <div className="main">
           <Switch>
             <Route exact path="/" component={home} />
-            <Route exact path="/1stfloor" component={FirstFloor} />
-            <Route exact path="/2ndfloor" component={SecondFloor} />
-            <Route exact path="/currenttenants" component={Current} />
-            <Route exact path="/availablespace" component={Available} />
-            <Route exact path="/downtown" component={downtown} />
-            <Route exact path="/contact" component={contact} />
-            <Route exact path="/history" component={history} />
-            <Route exact path="/basement" component={Basement} />
-            <Route exact path="/mainstreet" component={Mainstreet} />
-            <Route exact path="/suite101fp" component={Suite101} />
-            <Route exact path="/suite102fp" component={Suite102} />
-            <Route exact path="/suite103fp" component={Suite103} />
-            <Route exact path="/suite202fp" component={Suite202} />
-            <Route exact path="/suite203fp" component={Suite203} />
-            <Route exact path="/suite203fp" component={Suite203} />
-            <Route exact path="/suite206fp" component={Suite206} />
-            <Route exact path="/suite206afp" component={Suite206a} />
-            <Route exact path="/suite206bfp" component={Suite206b} />
-            <Route exact path="/suite209fp" component={Suite209} />
-            <Route exact path="/suite207fp" component={Suite207} />
-            <Route exact path="/suite208fp" component={Suite208} />
-            <Route exact path="/main61fp" component={Main61fp} />
-            <Route exact path="/main65fp" component={Main65fp} />
-            <Route exact path="/basementfp" component={Basementfp} />
+            <Route path="/1stfloor" component={FirstFloor} />
+            <Route path="/2ndfloor" component={SecondFloor} />
+            <Route path="/currenttenants" component={Current} />
+            <Route path="/availablespace" component={Available} />
+            <Route path="/downtown" component={downtown} />
+            <Route path="/contact" component={contact} />
+            <Route path="/history" component={history} />
+            <Route path="/basement" component={Basement} />
+            <Route path="/mainstreet" component={Mainstreet} />
+            <Route path="/suite101fp" component={Suite101} />
+            <Route path="/suite102fp" component={Suite102} />
+            <Route path="/suite103fp" component={Suite103} />
+            <Route path="/suite202fp" component={Suite202} />
+            <Route path="/suite203fp" component={Suite203} />
+            <Route path="/suite203fp" component={Suite203} />
+            <Route path="/suite206fp" component={Suite206} />
+            <Route path="/suite206afp" component={Suite206a} />
+            <Route path="/suite206bfp" component={Suite206b} />
+            <Route path="/suite209fp" component={Suite209} />
+            <Route path="/suite207fp" component={Suite207} />
+            <Route path="/suite208fp" component={Suite208} />
+            <Route path="/main61fp" component={Main61fp} />
+            <Route path="/main65fp" component={Main65fp} />
+            <Route path="/basementfp" component={Basementfp} />
             <PrivateRoute path="/admin" component={Admin} />
-            <Route exact path="/login" component={Login} />
+            <Route path="/login" component={Login} />
           </Switch>
         </div>
       </div>
