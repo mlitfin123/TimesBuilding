@@ -27,6 +27,9 @@ const Footer = () => {
             case '/contact':
                 setActivePage('contact');
             break;
+            case '/admin':
+                setActivePage('admin');
+            break;
             default: 
                 setActivePage('home');
             break;
@@ -47,6 +50,9 @@ const Footer = () => {
             </div>
             <div className="footer-content">
             <p>Copyright � 2008 <b>Red Maple Properties, LLC</b>&nbsp;&nbsp; All rights reserved.</p>
+            <div>
+                <Link onClick={() => setActivePage('admin')} className={activePage === 'admin' ? 'nav-link active' : 'nav-link'} to="/admin"> Admin</Link>
+            </div>
             Website courtesy of <a href="http://www.christianparentsforum.com/forums">GrowthByDesignConsulting</a><br></br>
             Website updated by <a href="https://marksfolio.herokuapp.com/">Mark Litfin</a>
             </div>
