@@ -31,10 +31,8 @@
     "start-front": "cd client && react-scripts start",
     "start": "concurrently \"npm run start-server\" \"npm run start-front\" --kill-others --kill-others-on-fail",
     "build": "cd client && react-scripts build",
-    "start serve": "cd client && serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "concurrently \"npm run start-server\" \"npm run start serve\" --kill-others --kill-others-on-fail",
     "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
