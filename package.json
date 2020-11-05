@@ -29,7 +29,7 @@
   "scripts": {
     "start-server": "nodemon server/server.js --watch server/*",
     "start-front": "cd client && react-scripts start",
-    "start": "serve -s build",
+    "start": "cd client && serve -s build",
     "build": "cd client && react-scripts build",
     "start serve": "cd client && serve -s build",
     "test": "react-scripts test",
