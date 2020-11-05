@@ -1,4 +1,4 @@
-import JAWSDB_URL from './config/config';
+const JAWSDB_URL = require('./config/config')
 
 // const path = require('path')
 
