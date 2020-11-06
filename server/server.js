@@ -23,7 +23,7 @@ app.use('/', tenantRouter)
 app.use('/', authRouter)
 
 app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    res.sendFile(path.join(__dirname, "./client/build"));
 });
 
 // If 500 error
