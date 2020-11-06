@@ -2,6 +2,8 @@
 
 ## Link To Website
 
+www.westminsteroffices.com/
+
 ## Description
 
 Professional website built for Red Maple Properties based in Westminster, MD. Red Maple Properties specializes in commercial property rental. Created using React.JS and SQLight to allow the owner of the company to easily update the website with current tenants and open/closed available space for rent.
