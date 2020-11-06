@@ -8,9 +8,9 @@ const home = () => {
                     <div className="row">
                         <div className="col-lg-6">
                             <div className="title">
-                                <h2>Looking to grow?</h2>
-                                <h2>Put your business in the heart of historic downtown Westminster, MD!</h2>
-                                <img src=".\images\AdditionalImages\buildingfront2.jpg" alt="Building Front" width="450"></img>
+                                <h2 className="homeTitle">Looking to grow?</h2>
+                                <h2 className="homeTitle">Put your business in the heart of historic downtown Westminster, MD!</h2>
+                                <img className="homeIMG" src=".\images\AdditionalImages\buildingfront2.jpg" alt="Building Front" width="450"></img>
                             </div>
                             <div className="title-secondary">
                                 <h3>The Times Building Offers You:</h3>

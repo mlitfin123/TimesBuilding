@@ -155,6 +155,11 @@ footer{
   float: right;
 }
 
+.text {
+  visibility: hidden;
+  font-size: 0px;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -162,13 +167,93 @@ footer{
   clear: both;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
 
+  .title {
+    padding-left: 75px;
+    padding-top: 5px;
+  }
+  .title-secondary{
+    left: 40%;
+    right: 10%;
+  }
+  .homeIMG {
+    width: 400px;
+    height: 200px;
+  }
+  header{
+    font-size: 20px;
+  }
+  .header-table{
+    margin-right: auto;
+    margin-left: auto;
+    border-style: solid;
+    border-color: #500000;
+    border-width: 6px;
+    width: 700px;
+    left: 40%;
+    right: 30%;
+  }
   body {
     font-size: 12px;
   }
+  .column {
+    padding: 5px;
+  }
+  
   .navIMG {
-    height: 40px
+    height: 90px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .homeTitle {
+    font-size: 13px;
+  }
+  .title {
+    padding: 5px;
+  }
+  .title-secondary{
+    left: 30%;
+    right: 1%;
+    font-size: 10px;
+  }
+  .homeIMG {
+    width: 250px;
+    height: 150px
+  }
+  header{
+    font-size: 13px;
+  }
+  .header-table{
+    margin-right: auto;
+    margin-left: auto;
+    border-style: solid;
+    border-color: #500000;
+    border-width: 4px;
+    width: 350px;
+    left: 40%;
+    right: 30%;
+  }
+  body {
+    font-size: 12px;
+  }
+  .column {
+    padding: 5px;
+  }
+
+  .text {
+    visibility: hidden;
+    float: left;
+    color: black;
+    outline-style: solid;
+    outline-width: 1.5px;
+    outline-offset: 1.5px;
+    outline-color :#810000;
+    background-color: #cddee4;
+    font-size: 0px;
+  } 
+  
+  .navIMG {
+    height: 40px;
   }
 }

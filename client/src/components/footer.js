@@ -38,7 +38,7 @@ const Footer = () => {
     return (
         <footer>
             <p>_________________________________________________________________________________________________________________________________________________________________________________________</p><br></br>
-            <div className="collapse navbar-collapse" id="navbarNav">
+            <div id="navbarNav">
                 <div className="navbar-footer">
                     <Link id="navbarHome" onClick={() => setActivePage('home')} className={activePage === 'home' ? 'nav-link active' : 'nav-link'} to="/">Home</Link> |
                     <Link id="navbarAvailable" onClick={() => setActivePage('availablespace')} className={activePage === 'availablespace' ? 'nav-link active' : 'nav-link'} to="/availablespace"> Available Space</Link> |
@@ -50,9 +50,6 @@ const Footer = () => {
             </div>
             <div className="footer-content">
             <p>Copyright � 2008 <b>Red Maple Properties, LLC</b>&nbsp;&nbsp; All rights reserved.</p>
-            <div>
-                <Link onClick={() => setActivePage('admin')} className={activePage === 'admin' ? 'nav-link active' : 'nav-link'} to="/admin"> Admin</Link>
-            </div>
             Website courtesy of <a href="http://www.christianparentsforum.com/forums">GrowthByDesignConsulting</a><br></br>
             Website updated by <a href="https://marksfolio.herokuapp.com/">Mark Litfin</a>
             </div>

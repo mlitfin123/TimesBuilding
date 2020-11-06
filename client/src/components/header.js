@@ -5,7 +5,7 @@ const Header = () => {
         <table className="header-table"> 
             <header>   
                     <div id="banner">
-                        <h1>THE TIMES BUILDING</h1>
+                        <h1 className="head">THE TIMES BUILDING</h1>
                     </div>
             </header>
         </table>
