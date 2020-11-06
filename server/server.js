@@ -22,6 +22,10 @@ app.use(express.static("client/build"));
 app.use('/', tenantRouter)
 app.use('/', authRouter)
 
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
+
 // If 500 error
 app.use(function (err, req, res, next) {
     console.error(err.stack)
