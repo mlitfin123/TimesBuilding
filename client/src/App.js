@@ -81,6 +81,13 @@ function App(props) {
           </Switch>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Footer />
     </Router>
     </AuthContext.Provider>
