@@ -44,8 +44,8 @@ const SecondFloor = () => {
             <section className="content">
                 <section className="column">
                     <div className="row">
-                        <div className="col-lg-6">
-                            <div className="column-content bio">
+                        <div>
+                            <div>
                                 <h1>2nd Floor Offices</h1>
                             </div>
                                 <ul>

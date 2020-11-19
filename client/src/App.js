@@ -49,18 +49,22 @@ function App(props) {
         <div className="column">
           <Nav />
         </div>
+        <div className="floors">
+        <Switch>
+          <Route path="/1stfloor" component={FirstFloor} />
+          <Route path="/2ndfloor" component={SecondFloor} />
+          <Route path="/mainstreet" component={Mainstreet} />
+        </Switch>
+        </div>
         <div className="main">
           <Switch>
             <Route exact path="/" component={home} />
-            <Route path="/1stfloor" component={FirstFloor} />
-            <Route path="/2ndfloor" component={SecondFloor} />
             <Route path="/currenttenants" component={Current} />
             <Route path="/availablespace" component={Available} />
             <Route path="/downtown" component={downtown} />
             <Route path="/contact" component={contact} />
             <Route path="/history" component={history} />
             <Route path="/basement" component={Basement} />
-            <Route path="/mainstreet" component={Mainstreet} />
             <Route path="/suite101fp" component={Suite101} />
             <Route path="/suite102fp" component={Suite102} />
             <Route path="/suite103fp" component={Suite103} />
@@ -81,6 +85,20 @@ function App(props) {
           </Switch>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Footer />
     </Router>
     </AuthContext.Provider>

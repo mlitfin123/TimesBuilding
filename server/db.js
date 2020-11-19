@@ -259,16 +259,16 @@ tenantSchema();
 login();
 spaceSchema();
 
-knex.select('*').from('active_tenants')
-    .then(data => console.log('data:', data))
-    .catch(err => console.log(err))
+// knex.select('*').from('active_tenants')
+//     .then(data => console.log('data:', data))
+//     .catch(err => console.log(err))
 
-knex.select('*').from('open_offices')
-    .then(data => console.log('data:', data))
-    .catch(err => console.log(err))
+// knex.select('*').from('open_offices')
+//     .then(data => console.log('data:', data))
+//     .catch(err => console.log(err))
     
-knex.select('*').from('users')
-    .then(data => console.log('data:', data))
-    .catch(err => console.log(err))
+// knex.select('*').from('users')
+//     .then(data => console.log('data:', data))
+//     .catch(err => console.log(err))
 
 module.exports = knex

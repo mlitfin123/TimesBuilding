@@ -67,7 +67,7 @@ const Available = () => {
                     There is current Main Street availability. Click <Link to={"./mainstreet"}>here</Link> to view more details.
                 </h4> )
                 }
-                <img src=".\images\AdditionalImages\hallway.jpg" alt="Floorplan" height="450"></img>
+                <img className= "hallway" src=".\images\AdditionalImages\hallway.jpg" alt="Floorplan" height="450"></img>
             </div>
         </main>
     )

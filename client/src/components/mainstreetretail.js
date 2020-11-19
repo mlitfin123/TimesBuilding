@@ -32,7 +32,7 @@ const Mainstreet = () => {
 
     return (
         <main>
-            <img id="firstFloorfp" src=".\images\1stFloor\1st floor map.jpg" alt="Floorplan" height="600"></img>
+            <img id="mainStFloorfp" src=".\images\1stFloor\1st floor map.jpg" alt="Floorplan" height="600"></img>
             <section className="content">
                 <section className="column">
                     <div className="row">

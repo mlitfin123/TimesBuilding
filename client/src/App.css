@@ -2,6 +2,7 @@ body{
   padding-top: 10px;
   background-color: #E4EDF7;
 }
+
 header{
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
@@ -87,6 +88,16 @@ footer{
   margin: auto;
   width: 50%;
 }
+.floors{
+  margin: auto;
+  width: 90%;
+}
+#secondFloorfp{
+  padding: 20px;
+}
+#mainStFloorfp{
+  padding: 20px;
+}
 .title{
   text-align: center;
   padding-top: 50px;
@@ -149,10 +160,18 @@ footer{
 
 #firstFloorfp{
   float: right;
+  padding: 20px;
 }
-
 #secondFloorfp{
   float: right;
+  padding: 20px;
+}
+#mainStFloorfp{
+  float: right;
+  padding: 20px;
+}
+.col-lg-6{
+  padding-left: 100px;
 }
 
 .text {
@@ -205,6 +224,23 @@ footer{
     height: 90px;
   }
 }
+@media screen and (max-width: 800px) {
+  #firstFloorfp{
+    width: 100px;
+    height: 400px;
+  }
+  #secondFloorfp{
+    width: 100px;
+    height: 380px;
+  }
+  #mainStFloorfp{
+    width: 150px;
+    height: 450px;
+  }
+  .col-lg-6{
+    padding-left: 10px;
+  }
+}
 @media screen and (max-width: 600px) {
   .homeTitle {
     font-size: 13px;
@@ -252,7 +288,30 @@ footer{
     background-color: #cddee4;
     font-size: 0px;
   } 
-  
+  #firstFloorfp{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+  #secondFloorfp{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+  #mainStFloorfp{
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+  .col-lg-6{
+    padding-left: 10px;
+  }
+  .hallway{
+    height: 350px
+  }
+  .history-images{
+    width: 300px;
+  }
   .navIMG {
     height: 40px;
   }
