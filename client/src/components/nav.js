@@ -34,11 +34,6 @@ const Nav = () => {
     }
 }, [location.pathname]);
 
-function myFunction() {
-    document.getElementsByClassName("text").style.visible = "visible";
-    document.getElementsByClassName("text").style.fontS = "visible";
-}
-
 return (
     <nav className="collapsible-menu">
         <div className="collapse navbar-collapse" id="navbarNav">
