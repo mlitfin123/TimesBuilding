@@ -34,7 +34,7 @@ import Suite209 from './components/suite209fp';
 import Suite208 from './components/suite208fp';
 import { getToken, removeUserSession, setUserSession } from './utils/Common';
 
-function App(props) {
+function App() {
   const [authLoading, setAuthLoading] = useState(true);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function App(props) {
       return;
     }
   
-    axios.get(`http://localhost:4001/verifyToken?token=${token}`).then(response => {
+    axios.get(`/verifyToken?token=${token}`).then(response => {
       setUserSession(response.data.token, response.data.user);
       setAuthLoading(false);
     }).catch(error => {
@@ -86,8 +86,8 @@ function App(props) {
             <Route path="/main61fp" component={Main61fp} />
             <Route path="/main65fp" component={Main65fp} />
             <Route path="/basementfp" component={Basementfp} />
-            <PrivateRoute path="/admin" component={Admin} />
             <PublicRoute path="/login" component={Login} />
+            <PrivateRoute path="/admin" component={Admin} />
           </Switch>
       <br></br>
       <br></br>
