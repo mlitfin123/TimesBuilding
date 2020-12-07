@@ -29,9 +29,9 @@ const downtown = () => {
                 </p>
             </div>
             <div className="downtown-images">
-                <img src=".\images\AdditionalImages\MD-Westminster_-_Memorial_Day_Parade_ (Small).JPG" alt="Parade"></img>
+                <img className="downtown-images" src=".\images\AdditionalImages\MD-Westminster_-_Memorial_Day_Parade_ (Small).JPG" alt="Parade"></img>
                 <p>Main Street Memorial Day Parade</p>
-                <img src=".\images\AdditionalImages\Flower_&amp;_Jazz_Festival_In_Front_of_Times_bldg_2008_(314)[1] (Small).jpg" alt="Festival"></img>
+                <img className="downtown-images" src=".\images\AdditionalImages\Flower_&amp;_Jazz_Festival_In_Front_of_Times_bldg_2008_(314)[1] (Small).jpg" alt="Festival"></img>
                 <p>Main Street Flower and Jazz Festival</p>
             </div>
             </div>
