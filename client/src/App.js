@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import axios from 'axios';
 import Current from './components/currenttenants';
 import downtown from './components/downtown';
 import Header from './components/header';
@@ -24,39 +23,25 @@ import Main61fp from './components/main61fp';
 import Main65fp from './components/main65fp';
 import Basementfp from './components/basementfp';
 import Login from './components/login';
-import PrivateRoute from './utils/PrivateRoute';
-import PublicRoute from './utils/PublicRoute';
+import PrivateRoute from './PrivateRoute';
+import { AuthContext } from "./context/auth";
 import Suite202 from './components/suite202fp';
 import Suite206 from './components/suite206fp';
 import Suite206a from './components/suite206afp';
 import Suite206b from './components/suite206bfp';
 import Suite209 from './components/suite209fp';
 import Suite208 from './components/suite208fp';
-import { getToken, removeUserSession, setUserSession } from './utils/Common';
 
-function App() {
-  const [authLoading, setAuthLoading] = useState(true);
-
-  useEffect(() => {
-    const token = getToken();
-    if (!token) {
-      return;
-    }
+function App(props) {
+  const [authTokens, setAuthTokens] = useState();
   
-    axios.get(`/verifyToken?token=${token}`).then(response => {
-      setUserSession(response.data.token, response.data.user);
-      setAuthLoading(false);
-    }).catch(error => {
-      removeUserSession();
-      setAuthLoading(false);
-    });
-  }, []);
-
-  if (authLoading && getToken()) {
-    return <div className="content">Checking Authentication...</div>
+  const setTokens = (data) => {
+    localStorage.setItem("tokens", JSON.stringify(data));
+    setAuthTokens(data);
   }
 
   return (
+    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
     <Router>
       <Header />
         <Switch>
@@ -86,8 +71,8 @@ function App() {
             <Route path="/main61fp" component={Main61fp} />
             <Route path="/main65fp" component={Main65fp} />
             <Route path="/basementfp" component={Basementfp} />
-            <PublicRoute path="/login" component={Login} />
             <PrivateRoute path="/admin" component={Admin} />
+            <Route path="/login" component={Login} />
           </Switch>
       <br></br>
       <br></br>
@@ -105,6 +90,7 @@ function App() {
       <br></br>
       <Footer />
     </Router>
+    </AuthContext.Provider>
   );
 }
 

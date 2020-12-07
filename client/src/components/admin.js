@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { removeUserSession } from '../utils/Common';
-import Nav from './nav';
+import { useAuth } from "../context/auth";
 
-const Admin = (props) => {
+const Admin = () => {
     const [tenant, setTenant] = useState('')
     const [space, setSpace] = useState([])
     const [website, setWebsite] = useState('')
     const [image, setImage] = useState('')
     const [tenants, setTenants] = useState([])
+    const { setAuthTokens } = useAuth();
 
     useEffect(() => {
             fetchTenants()
@@ -16,8 +16,7 @@ const Admin = (props) => {
         }, [])
 
     function logOut() {
-        removeUserSession();
-        props.history.push('/login');
+        setAuthTokens();
     }
 
 // Fetch all tenants
@@ -99,11 +98,6 @@ const handleSpaceModify = (id, space) => {
 
     return (
         <main>
-            <div className="row">
-                <div>
-                    <Nav />
-                </div>
-                <div className="col">
             <form className="form">
                 <h2>Check the Box to Open the Space:</h2>
                 {space.map(space => (<li space key={space.id}>{space.space} open <input type="checkbox" id={space.id} name={space.space} value={space.is_open} checked={space.is_open == '-1'? "checked" : null }  onChange={() => handleSpaceModify(space.id)}></input></li>))}
@@ -140,9 +134,7 @@ const handleSpaceModify = (id, space) => {
                 )}
                 <br></br>
                 <br></br>
-                <input type="button" onClick={logOut} value="Logout" />
-            </div>
-            </div>
+                <button onClick={logOut}>Log out</button>
             </div>
         </main>
     )
