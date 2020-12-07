@@ -50,7 +50,7 @@ app.use(function (req, res, next) {
 
 
 // request handlers
-app.use('/users/signin', (req, res) => {
+app.use('/users', (req, res) => {
     if (!req.user) return res.status(401).json({ success: false, message: 'Invalid user to access it.' });
 });
 
