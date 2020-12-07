@@ -25,6 +25,7 @@ import Main65fp from './components/main65fp';
 import Basementfp from './components/basementfp';
 import Login from './components/login';
 import PrivateRoute from './utils/PrivateRoute';
+import PublicRoute from './utils/PublicRoute';
 import Suite202 from './components/suite202fp';
 import Suite206 from './components/suite206fp';
 import Suite206a from './components/suite206afp';
@@ -86,7 +87,7 @@ function App(props) {
             <Route path="/main65fp" component={Main65fp} />
             <Route path="/basementfp" component={Basementfp} />
             <PrivateRoute path="/admin" component={Admin} />
-            <Route path="/login" component={Login} />
+            <PublicRoute path="/login" component={Login} />
           </Switch>
       <br></br>
       <br></br>
