@@ -10,7 +10,7 @@ function Login(props) {
     const [error, setError] = useState(null);
     
     // handle button click of login form
-    const handleLogin =  async () => {
+    const handleLogin = () => {
         setError(null);
         setLoading(true);
         axios.post('/users/signin', { username: username.value, password: password.value }).then(response => {

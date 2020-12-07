@@ -10,6 +10,7 @@ const tenantRouter = require('./routes/routes.js')
 const utils = require('../utils');
 const PORT = process.env.PORT || 4001
 const app = express()
+const proxy = require('http-proxy-middleware')
 
 const userData = {
     userId: "789789",
@@ -27,6 +28,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json())
 app.use(cookieParser());
 app.use(express.static("client/build"));
+
+module.exports = function(app) {
+    // add other server routes to path array
+    app.use(proxy(['/' ], { target: 'http://localhost:4001' }));
+} 
 
 //login functions
 app.use(function (req, res, next) {
@@ -50,7 +56,7 @@ app.use(function (req, res, next) {
 
 
 // request handlers
-app.use('/users', (req, res) => {
+app.get('/', (req, res) => {
     if (!req.user) return res.status(401).json({ success: false, message: 'Invalid user to access it.' });
 });
 
