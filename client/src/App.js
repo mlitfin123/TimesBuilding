@@ -79,15 +79,6 @@ function App(props) {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
       <Footer />
     </Router>
     </AuthContext.Provider>
