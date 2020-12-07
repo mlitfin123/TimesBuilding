@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import Nav from "./nav";
 
 const Basement = () => {
     const [space, setSpace] = useState([])
@@ -30,16 +31,17 @@ const Basement = () => {
 
     return (
         <main>
-            <section className="content">
-                <section className="column">
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <h1>
-                                Currently Available Space 
-                            </h1>
-                        </div>
+            <div className="row">
+                <div>
+                    <Nav />
+                </div>
+                <div className="col-8">
+                <div className="title-secondary">
+                    <h2 className="title-secondary">
+                        Currently Available Space 
+                    </h2>
                         { basement === -1 && (
-                            <div className="title-secondary">
+                            <div>
                                 <h3>
                                     63 East Main Lower Level Office / Storage
                                 </h3>
@@ -55,9 +57,9 @@ const Basement = () => {
                             </div> )
                             }
                     </div>
-                </section>
-            </section>
-        </main>
+                    </div>
+                    </div>
+                    </main>
     )
 }
 

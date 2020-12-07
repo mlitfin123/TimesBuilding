@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import Nav from "./nav";
 
 const Available = () => {
     const [space, setSpace] = useState([])
@@ -33,6 +34,11 @@ const Available = () => {
 
     return (
         <main>
+            <div className="row">
+                <div>
+                    <Nav />
+                </div>
+                <div className="col">
             <div className="title">
                 <h2>
                     Currently Available Space
@@ -67,7 +73,9 @@ const Available = () => {
                     There is current Main Street availability. Click <Link to={"./mainstreet"}>here</Link> to view more details.
                 </h4> )
                 }
-                <img className= "hallway" src=".\images\AdditionalImages\hallway.jpg" alt="Floorplan" height="450"></img>
+            </div>
+            <img className= "hallway" src=".\images\AdditionalImages\hallway.jpg" alt="Floorplan" height="650"></img>
+            </div>
             </div>
         </main>
     )

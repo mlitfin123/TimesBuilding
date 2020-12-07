@@ -1,60 +1,56 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-import axios from 'axios'
-import "../App.css";
-import { useAuth } from "../context/auth";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { setUserSession } from '../utils/Common';
 
-export default function Login() {
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [loginStatus, setLoginStatus] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const { setAuthTokens } = useAuth();
-
-    const login = () => {
-        axios.post("/loggedin", {
-            username: username,
-            password: password,
-        })
-        .then((res) => {
-        if (res.data.length > 0) {
-            setAuthTokens(res.data);
-            setLoginStatus(true);
-            console.log("Logged In")
-        } else {
-            setLoginStatus(false);
-            setIsError(true);
-        }
-        })
-    };
-
-    if (loginStatus) {
-        return <Redirect to="/admin" />;
+function Login(props) {
+    const [loading, setLoading] = useState(false);
+    const username = useFormInput('');
+    const password = useFormInput('');
+    const [error, setError] = useState(null);
+    
+    // handle button click of login form
+    const handleLogin = () => {
+        setError(null);
+        setLoading(true);
+        axios.post('/users/signin', { username: username.value, password: password.value }).then(response => {
+        setLoading(false);
+        setUserSession(response.data.token, response.data.user);
+        props.history.push('/admin');
+        }).catch(error => {
+        setLoading(false);
+        if (error.response.status === 401) setError(error.response.data.message);
+        else setError("Something went wrong. Please try again later.");
+        });
     }
-
+    
     return (
-        <div className="App">
-        <div className="login">
-            <h1>Login</h1>
-            <input
-            type="text"
-            placeholder="Username..."
-            onChange={(e) => {
-                setUsername(e.target.value);
-            }}
-            />
-            <input
-            type="password"
-            placeholder="Password..."
-            onChange={(e) => {
-                setPassword(e.target.value);
-            }}
-            />
-            <button onClick={login}> Login </button>
+        <div><br /><br />
+        <h2>Login</h2><br /><br />
+        <div>
+            Username<br />
+            <input type="text" {...username} autoComplete="new-password" />
         </div>
-        { isError &&<p> The username or password provided were incorrect!</p> }
-        <h1>{loginStatus}</h1>
+        <div style={{ marginTop: 10 }}>
+            Password<br />
+            <input type="password" {...password} autoComplete="new-password" />
+        </div>
+        {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
+        <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
         </div>
     );
-}
+    }
+    
+    const useFormInput = initialValue => {
+    const [value, setValue] = useState(initialValue);
+    
+    const handleChange = e => {
+        setValue(e.target.value);
+    }
+    return {
+        value,
+        onChange: handleChange
+    }
+    }
+    
+export default Login;

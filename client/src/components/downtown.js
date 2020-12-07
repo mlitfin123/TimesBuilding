@@ -1,9 +1,15 @@
 import React from "react";
+import Nav from "./nav";
 
 const downtown = () => {
     return (
         <main>
-            <div className="title">
+            <div className="row">
+                <div>
+                    <Nav />
+                </div>
+                <div className="col">
+                    <div className="title">
                 <h4>
                     Downtown Westminster Activities
                 </h4>
@@ -27,6 +33,8 @@ const downtown = () => {
                 <p>Main Street Memorial Day Parade</p>
                 <img src=".\images\AdditionalImages\Flower_&amp;_Jazz_Festival_In_Front_of_Times_bldg_2008_(314)[1] (Small).jpg" alt="Festival"></img>
                 <p>Main Street Flower and Jazz Festival</p>
+            </div>
+            </div>
             </div>
         </main>
     )

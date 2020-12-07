@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import Nav from "./nav";
 
 const Mainstreet = () => {
     const [space, setSpace] = useState([])
@@ -32,21 +33,20 @@ const Mainstreet = () => {
 
     return (
         <main>
-            <img id="mainStFloorfp" src=".\images\1stFloor\1st floor map.jpg" alt="Floorplan" height="600"></img>
-            <section className="content">
-                <section className="column">
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <h1>
+            <div className="row">
+                <div>
+                    <Nav />
+                </div>
+                <div className="col-8">
+                            <h2 className="title">
                             Main Street Retail
-                            </h1>
-                                <ul>
+                            </h2>
+                                <ul className="title-secondary">
                                     <li>Great center of town location</li>
                                     <li>Near city parking lots</li>
                                     <li>New facade and awning</li>
                                     <li>12,000 average daily traffic count</li>
                                 </ul>
-                        </div>
                             <div className="title-secondary">
                                 <h3>
                                     Currently Available Space
@@ -97,8 +97,8 @@ const Mainstreet = () => {
                                 }
                             </div>
                     </div>
-                </section>
-            </section>
+                    <img id="mainStFloorfp" src=".\images\1stFloor\1st floor map.jpg" alt="Floorplan" height="600"></img>
+                </div>
         </main>
     )
 }

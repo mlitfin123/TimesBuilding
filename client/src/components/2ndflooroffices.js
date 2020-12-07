@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import Nav from "./nav";
 
 const SecondFloor = () => {
 
@@ -40,21 +41,20 @@ const SecondFloor = () => {
 
     return (
         <main>
-            <img id="secondFloorfp" src=".\images\2ndFloor\2nd floor map.jpg" alt="Floorplan" height="400"></img>
-            <section className="content">
-                <section className="column">
-                    <div className="row">
-                        <div>
-                            <div>
-                                <h1>2nd Floor Offices</h1>
-                            </div>
-                                <ul>
+            <div className="row">
+                <div>
+                    <Nav />
+                </div>
+                <div className="col-8">
+                            <h2 className="title">
+                                2nd Floor Offices
+                            </h2>
+                            <ul className="title-secondary">
                                     <li>Economical office space in the center of town</li>
                                     <li>Common men's and women's restroom maintained by landlord</li>
                                     <li>Premise monitored with video surveillance</li>
                                     <li>Building access electronically controlled</li>
                                 </ul>
-                        </div>
                         <div className="title-secondary">
                                 <h3>
                                     Currently Available Space
@@ -196,10 +196,10 @@ const SecondFloor = () => {
                                     </div>
                                     )
                                 }
-                            </div>
+                        </div>
                     </div>
-                </section>
-            </section>
+                        <img id="secondFloorfp" src=".\images\2ndFloor\2nd floor map.jpg" alt="Floorplan" height="400"></img>
+                </div>
         </main>
     )
 }

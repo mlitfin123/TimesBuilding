@@ -35,8 +35,8 @@ const Nav = () => {
 }, [location.pathname]);
 
 return (
-    <nav className="collapsible-menu">
-        <div className="collapse navbar-collapse" id="navbarNav">
+    <div className="sidenav">
+        <div className="navbar-nav">
             <div>
                 <p className="nav-item">
                     <Link onClick={() => setActivePage('home')} className={activePage === 'home' ? 'nav-link active' : 'nav-link'} to="/"><img className="navIMG" src="/images/Logos/home.jpg" alt="Home" height="100px"></img><span className="text">Home</span></Link>
@@ -58,7 +58,7 @@ return (
                 </p>
             </div>
         </div>
-    </nav>
+    </div>
     );
 }
 

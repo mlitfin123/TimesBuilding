@@ -1,12 +1,29 @@
+html{
+  width: 100%;
+}
 body{
   padding-top: 10px;
   background-color: #E4EDF7;
+  padding-left: 40px;
+  padding-right: 40px;
 }
-
+h1{
+  font-weight: bold;
+  font-size: 80px
+}
+h2{
+  font-weight: bold;
+}
+h3{
+  font-weight: bold;
+}
+h4{
+  font-weight: bold;
+}
 header{
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
-  padding: 1px;
+  padding: 50px;
   font-size: 28px;
   background-color: #658590;
 }
@@ -16,19 +33,29 @@ header{
   border-style: solid;
   border-color: #500000;
   border-width: 6px;
-  width: 1400px;
-  left: 40%;
-  right: 30%;
+  width: 1800px;
 }
 footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   text-align: center;
+  border-top: 1px solid #080808;
 }
 .footer-content{
   font-size: 10px;
+  padding-top: 5px;
 }
 .form{
   padding-top: 100px;
   text-align: center;
+}
+.hallway{
+  padding-top: 60px;
+}
+.sidenav{
+  padding-top: 30px
 }
 #navbarHome{
   color: black;
@@ -84,9 +111,11 @@ footer{
 #navbarContact:active{
   color: #ca0000
 }
+.contactForm{
+  padding-top: 20px;
+}
 .main{
   margin: auto;
-  width: 50%;
 }
 .floors{
   margin: auto;
@@ -100,42 +129,47 @@ footer{
 }
 .title{
   text-align: center;
-  padding-top: 50px;
+  padding-top: 100px;
 }
 .title-secondary{
+  padding: 20px;
   margin-right: auto;
-  margin-left: auto;
-  position: absolute;
-  left: 40%;
-  right: 30%;
+  margin-left: 37%;
+  position: relative;
+}
+.homeTitle {
+  padding-bottom: 15px;
 }
 .downtown-title{
   font-weight: bold;
-  font-size: 13px;
+  font-size: 16px;
+  padding-left: 30px;
+  padding-top: 20px;
 }
 .downtown-content{
-  font-size: 12px;
+  font-size: 15px;
+  padding-left: 30px;
 }
 .downtown-images{
   padding-top: 20px;
   margin-right: auto;
   margin-left: auto;
-  left: 40%;
-  right: 30%;
   text-align: center;
   font-size: 10px;
   font-weight: bold;
 }
 .history-content{
-  font-size: 13px;
+  font-size: 16px;
   padding-top: 50px;
+  padding-left: 30px;
 }
 .history-images{
   padding-top: 10px;
   padding-right: 20px;
 }
 .history-image-content{
-  font-size: 13px;
+  font-size: 16px;
+  padding-left: 30px;
 }
 .contact-content{
   font-size: 14px;
@@ -187,15 +221,17 @@ footer{
 }
 
 @media screen and (max-width: 800px) {
+  h1{
+    font-size: 50px;
+  }
 
   .title {
-    padding-left: 75px;
-    padding-top: 5px;
+    padding-top: 30px;
   }
-  .title-secondary{
-    left: 40%;
-    right: 10%;
+  .title-secondary {
+    margin-left: 10%;
   }
+
   .homeIMG {
     width: 400px;
     height: 200px;
@@ -208,13 +244,11 @@ footer{
     margin-left: auto;
     border-style: solid;
     border-color: #500000;
-    border-width: 6px;
+    border-width: 8px;
     width: 700px;
-    left: 40%;
-    right: 30%;
   }
   body {
-    font-size: 12px;
+    font-size: 14px;
   }
   .column {
     padding: 5px;
@@ -223,8 +257,10 @@ footer{
   .navIMG {
     height: 90px;
   }
+  header{
+    padding: 35px;
+  }
 }
-@media screen and (max-width: 800px) {
   #firstFloorfp{
     width: 100px;
     height: 400px;
@@ -237,28 +273,46 @@ footer{
     width: 150px;
     height: 450px;
   }
-  .col-lg-6{
-    padding-left: 10px;
+  .downtown-title{
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 15px;
   }
-}
+  .downtown-content{
+    padding-left: 5px;
+  }
+  .downtown-images{
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 @media screen and (max-width: 600px) {
-  .homeTitle {
-    font-size: 13px;
+  h1{
+    font-size: 30px;
   }
-  .title {
-    padding: 5px;
+  h2{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 16px;
+  }
+  h4{
+    font-size: 16px;
   }
   .title-secondary{
-    left: 30%;
-    right: 1%;
-    font-size: 10px;
+    margin-left: 0%;
+    padding: 5px;
+  }
+  header{
+    padding: 10px;
+  }
+  .title {
+    padding: 1px;
+    padding-top: 20px;
   }
   .homeIMG {
     width: 250px;
     height: 150px
-  }
-  header{
-    font-size: 13px;
   }
   .header-table{
     margin-right: auto;
@@ -267,11 +321,6 @@ footer{
     border-color: #500000;
     border-width: 4px;
     width: 350px;
-    left: 40%;
-    right: 30%;
-  }
-  body {
-    font-size: 12px;
   }
   .column {
     padding: 5px;
@@ -303,16 +352,41 @@ footer{
     width: 0px;
     height: 0px;
   }
-  .col-lg-6{
-    padding-left: 10px;
-  }
   .hallway{
     height: 350px
   }
   .history-images{
-    width: 300px;
+    width: 250px;
+    padding-top: 5px;
+    padding-right: 5px
+  }
+  .history-content{
+    font-size: 14px;
+    padding-top: 10px;
+    padding-left: 1px;
+  }
+  .history-image-content{
+    font-size: 14px;
+    padding-left: 1px;
   }
   .navIMG {
-    height: 40px;
+    height: 48px;
+  }
+  body{
+    padding-top: 10px;
+    padding-left: 18px;
+    padding-right: 10px;
+    font-size: 13px;
+  }
+  .downtown-title{
+    font-weight: bold;
+    padding-left: 1px;
+    padding-top: 10px;
+  }
+  .downtown-content{
+    padding-left: 1px;
+  }
+  .downtown-images{
+    width:250px;
   }
 }

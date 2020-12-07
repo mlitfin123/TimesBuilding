@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Nav from './nav';
 
 const history = () => {
     return (
         <main>
+            <div className="row">
+                <div>
+                    <Nav />
+                </div>
+                <div className="col">
             <div>
                 <p className="history-content">               
                 The Times Building was the home of the Time Printing Company which was founded in 1911 and became the Carroll County Times in 1956.  The Times Building has been renovated to maintain the historic charm while being a vibrant business location.<br></br><br></br>
@@ -25,6 +31,8 @@ const history = () => {
                         <td><p>The old Times Printing Company office is now a bright and open hallway leading to 10,000 sq/ft of remodeled office space.  This entryway boasts original tin ceilings and tin walls added in the 1930's and uncovered during the recent renovation.</p></td>
                     </tr>
                 </table>
+            </div>
+            </div>
             </div>
         </main>
     )

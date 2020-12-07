@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
+import Nav from "./nav";
 
 const Current = () => {
     const [tenants, setTenants] = useState([])
@@ -19,22 +20,21 @@ const Current = () => {
 }
     return (
         <main>
-            <section className="content">
-                <section className="column">
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <div className="title">
-                                <h3>Current tenants include a diverse clientele including retail and professional companies:</h3>
-                            </div>
-                            <div className="title-secondary">
-                                <ul>
-                                    {tenants.map(tenant => (<li tenant key={tenant.id}><a href={tenant.website}>{tenant.tenant}</a></li>))}
-                                </ul>
-                            </div>
-                        </div>
+            <div className="row">
+                <div>
+                    <Nav />
+                </div>
+                <div className="col">
+                    <div className="title">
+                        <h3>Current tenants include a diverse clientele including retail and professional companies:</h3>
                     </div>
-                </section>
-            </section>
+                    <div className="title-secondary">
+                        <ul>
+                            {tenants.map(tenant => (<li tenant key={tenant.id}><a href={tenant.website}>{tenant.tenant}</a></li>))}
+                        </ul>
+                    </div>
+                    </div>
+                </div>
         </main>
     )
 }

@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import axios from 'axios';
 import Current from './components/currenttenants';
 import downtown from './components/downtown';
 import Header from './components/header';
 import Footer from './components/footer';
 import home from './components/home';
-import Nav from './components/nav';
 import contact from './components/contact';
 import history from './components/history';
 import Admin from './components/admin';
@@ -24,39 +24,45 @@ import Main61fp from './components/main61fp';
 import Main65fp from './components/main65fp';
 import Basementfp from './components/basementfp';
 import Login from './components/login';
-import PrivateRoute from './PrivateRoute';
-import { AuthContext } from "./context/auth";
+import PrivateRoute from './utils/PrivateRoute';
 import Suite202 from './components/suite202fp';
 import Suite206 from './components/suite206fp';
 import Suite206a from './components/suite206afp';
 import Suite206b from './components/suite206bfp';
 import Suite209 from './components/suite209fp';
 import Suite208 from './components/suite208fp';
+import { getToken, removeUserSession, setUserSession } from './utils/Common';
 
 function App(props) {
-  const [authTokens, setAuthTokens] = useState();
+  const [authLoading, setAuthLoading] = useState(true);
+
+  useEffect(() => {
+    const token = getToken();
+    if (!token) {
+      return;
+    }
   
-  const setTokens = (data) => {
-    localStorage.setItem("tokens", JSON.stringify(data));
-    setAuthTokens(data);
+    axios.get(`http://localhost:4001/verifyToken?token=${token}`).then(response => {
+      setUserSession(response.data.token, response.data.user);
+      setAuthLoading(false);
+    }).catch(error => {
+      removeUserSession();
+      setAuthLoading(false);
+    });
+  }, []);
+
+  if (authLoading && getToken()) {
+    return <div className="content">Checking Authentication...</div>
   }
 
   return (
-    <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
     <Router>
       <Header />
-      <div className="row">
-        <div className="column">
-          <Nav />
-        </div>
-        <div className="floors">
         <Switch>
           <Route path="/1stfloor" component={FirstFloor} />
           <Route path="/2ndfloor" component={SecondFloor} />
           <Route path="/mainstreet" component={Mainstreet} />
         </Switch>
-        </div>
-        <div className="main">
           <Switch>
             <Route exact path="/" component={home} />
             <Route path="/currenttenants" component={Current} />
@@ -70,7 +76,6 @@ function App(props) {
             <Route path="/suite103fp" component={Suite103} />
             <Route path="/suite202fp" component={Suite202} />
             <Route path="/suite203fp" component={Suite203} />
-            <Route path="/suite203fp" component={Suite203} />
             <Route path="/suite206fp" component={Suite206} />
             <Route path="/suite206afp" component={Suite206a} />
             <Route path="/suite206bfp" component={Suite206b} />
@@ -83,8 +88,6 @@ function App(props) {
             <PrivateRoute path="/admin" component={Admin} />
             <Route path="/login" component={Login} />
           </Switch>
-        </div>
-      </div>
       <br></br>
       <br></br>
       <br></br>
@@ -101,7 +104,6 @@ function App(props) {
       <br></br>
       <Footer />
     </Router>
-    </AuthContext.Provider>
   );
 }
 

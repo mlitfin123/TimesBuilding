@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
+import Nav from "./nav";
 
 const FirstFloor = () => {
     const [space, setSpace] = useState([])
@@ -32,15 +33,15 @@ const FirstFloor = () => {
 
     return (
         <main>
-            <img id="firstFloorfp" src=".\images\1stFloor\1st floor map.jpg" alt="Floorplan" height="600"></img>
-            <section className="content">
-                <section className="column">
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <h1>
+            <div className="row">
+                <div>
+                    <Nav />
+                </div>
+                <div className="col-8">
+                            <h2 className="title">
                                 1st Floor Executive Offices
-                            </h1>
-                                <ul>
+                            </h2>
+                                <ul className="title-secondary">
                                     <li>Completely remodeled office</li>
                                     <li>Bright offices with large, new windows</li>
                                     <li>New Central HVAC</li>
@@ -48,7 +49,6 @@ const FirstFloor = () => {
                                     <li>Premise monitored with video surveillance</li>
                                     <li>Building access electronically controlled</li>
                                 </ul>
-                        </div>
                             <div className="title-secondary">
                                 <h3>
                                     Currently Available Space
@@ -81,8 +81,8 @@ const FirstFloor = () => {
                                 }
                         </div>
                     </div>
-                </section>
-            </section>
+                        <img id="firstFloorfp" src=".\images\1stFloor\1st floor map.jpg" alt="Floorplan" height="600"></img>
+                </div>
         </main>
     )
 }
