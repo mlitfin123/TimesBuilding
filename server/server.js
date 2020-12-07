@@ -10,6 +10,7 @@ const tenantRouter = require('./routes/routes.js')
 const utils = require('../utils');
 const PORT = process.env.PORT || 4001
 const app = express()
+const router = express.Router()
 
 const userData = {
     userId: "789789",
@@ -29,7 +30,7 @@ app.use(cookieParser());
 app.use(express.static("client/build"));
 
 //login functions
-app.use(function (req, res, next) {
+router.use(function (req, res, next) {
     // check header or url parameters or post parameters for token
     var token = req.headers['authorization'];
     if (!token) return next(); //if no token, continue
@@ -50,13 +51,13 @@ app.use(function (req, res, next) {
 
 
 // request handlers
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     if (!req.user) return res.status(401).json({ success: false, message: 'Invalid user to access it.' });
 });
 
 
 // validate the user credentials
-app.post('/users/signin', function (req, res) {
+router.post('/users/signin', function (req, res) {
     const user = req.body.username;
     const pwd = req.body.password;
 
@@ -86,7 +87,7 @@ app.post('/users/signin', function (req, res) {
 
 
 // verify the token and return it if it's valid
-app.get('/verifyToken', function (req, res) {
+router.get('/verifyToken', function (req, res) {
     // check header or url parameters or post parameters for token
     var token = req.body.token || req.query.token;
     if (!token) {
