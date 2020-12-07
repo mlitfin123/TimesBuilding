@@ -85,7 +85,7 @@ function App(props) {
             <Route path="/main61fp" component={Main61fp} />
             <Route path="/main65fp" component={Main65fp} />
             <Route path="/basementfp" component={Basementfp} />
-            <PrivateRoute path="/admin" component={Admin} />
+            <Route path="/admin" component={Admin} />
             <Route path="/login" component={Login} />
           </Switch>
       <br></br>
