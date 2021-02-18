@@ -105,7 +105,7 @@ const handleSpaceModify = (id, space) => {
                 <div className="tenant-list-form">
                     <div className="form-wrapper" onSubmit={handleTenantSubmit}>
                         <div className="enterTenant">
-                    <h2  className="tenantLabel">Enter the Name and Website of the New Tenant:</h2>
+                    <h2 className="tenantLabel">Enter the Name and Website of the New Tenant:</h2>
                         <div className="form-row">
                             <fieldset className="tenantLabel">
                                 <label className="form-label" htmlFor="tenant">Enter New Tenant: </label>
@@ -119,7 +119,7 @@ const handleSpaceModify = (id, space) => {
                     <button id="tenantSubmit" onClick={handleTenantSubmit} className="btn btn-add">Add the Tenant</button>
                     </div>
                     </div>
-                    <h2>Remove a Current Tenant:</h2>
+                    <h2 className="tenantLabel">Remove a Current Tenant:</h2>
                         <ul className="list">
                             {tenants.map(tenant => (<li tenant key={tenant.id}>{tenant.tenant} <button onClick={() => handleTenantRemove(tenant.id)} className="delete=btn">x</button></li>))}
                         </ul>
