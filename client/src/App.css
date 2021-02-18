@@ -50,6 +50,21 @@ footer{
 .form{
   padding-top: 100px;
   text-align: center;
+  border-bottom-style: solid;
+}
+.tenantLabel{
+  padding-top: 25px;
+  text-align: left;
+}
+.enterTenant {
+  border-bottom-style: solid;
+  padding-bottom: 25px;
+}
+.form-label {
+  padding: 10px;
+}
+#tenantSubmit{
+  padding-top: 25px;
 }
 .hallway{
   padding-top: 60px;

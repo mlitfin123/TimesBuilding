@@ -106,23 +106,21 @@ const handleSpaceModify = (id, space) => {
                 {/* Form for creating new tenant */}
                 <div className="tenant-list-form">
                     <div className="form-wrapper" onSubmit={handleTenantSubmit}>
+                        <div className="enterTenant">
+                    <h2  className="tenantLabel">Enter the Name and Website of the New Tenant:</h2>
                         <div className="form-row">
-                        <h2>Enter the Name and Website of the New Tenant:</h2>
-                            <fieldset>
+                            <fieldset className="tenantLabel">
                                 <label className="form-label" htmlFor="tenant">Enter New Tenant: </label>
                                 <input className="form-input" type="text" id="tenant" name="tenant" value={tenant} placeholder="Tenant Name" required="true" onChange={(e) => setTenant(e.currentTarget.value)} />
                             </fieldset>
-                            <fieldset>
+                            <fieldset className="tenantLabel">
                                 <label className="form-label" htmlFor="website">Enter Website for Tenant: </label>
                                 <input className="form-input" type="text" id="website" name="website" value={website} placeholder="Website" onChange={(e) => setWebsite(e.currentTarget.value)} />
                             </fieldset>
-                            <fieldset>
-                                <label className="form-label" htmlFor="image">Enter Image for Tenant: </label>
-                                <input type="file"  accept="image/*" name="image" id="file" value={image} onChange={(e) => setImage(e.currentTarget.value)}></input>
-                            </fieldset>
                         </div>
+                    <button id="tenantSubmit" onClick={handleTenantSubmit} className="btn btn-add">Add the Tenant</button>
                     </div>
-                    <button onClick={handleTenantSubmit} className="btn btn-add">Add the Tenant</button>
+                    </div>
                     <h2>Remove a Current Tenant:</h2>
                         <ul className="list">
                             {tenants.map(tenant => (<li tenant key={tenant.id}>{tenant.tenant} <button onClick={() => handleTenantRemove(tenant.id)} className="delete=btn">x</button></li>))}
