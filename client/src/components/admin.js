@@ -6,7 +6,6 @@ const Admin = () => {
     const [tenant, setTenant] = useState('')
     const [space, setSpace] = useState([])
     const [website, setWebsite] = useState('')
-    const [image, setImage] = useState('')
     const [tenants, setTenants] = useState([])
     const { setAuthTokens } = useAuth();
 
@@ -34,7 +33,6 @@ const Admin = () => {
         .post('/create', {
         tenant: tenant,
         website: website,
-        image: image,
     })
         .then(res => {
         console.log(res.data)
