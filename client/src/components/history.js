@@ -26,8 +26,16 @@ const history = () => {
                         <td><p>The office staff of The Times Printing Co. posed in their old office at 63 E. Main St. Westminster, c. 1925.</p></td>
                     </tr>
                     <tr>
+                        <td><img className="history-images" src=".\images\AdditionalImages\paperPress.jpg" alt="Printing Press" width="300px"></img></td>
+                        <td><p>Little Giant Paper Press used by the Carroll County Times Building. Built by Little Giant Hay Press Co. Alma, Michigan.</p></td>
+                    </tr>
+                    <tr>
                         <td><img className="history-images" src=".\images\AdditionalImages\hallway.jpg" alt="Hallway" width="300px"></img></td>
                         <td><p>The old Times Printing Company office is now a bright and open hallway leading to 10,000 sq/ft of remodeled office space.  This entryway boasts original tin ceilings and tin walls added in the 1930's and uncovered during the recent renovation.</p></td>
+                    </tr>
+                    <tr>
+                        <td><img className="history-images" src=".\images\AdditionalImages\calendar.jpg" alt="Calendar" width="300px"></img></td>
+                        <td><p>1943 calendar from the Times Printing Company Westminster, Maryland.</p></td>
                     </tr>
                 </table>
             </div>
