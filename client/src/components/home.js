@@ -9,6 +9,11 @@ const home = () => {
                     <Nav />
                 </div>
                 <div className="col">
+                        <div className="title">
+                            <img className="homeIMG" src=".\images\AdditionalImages\storefront.jpg" alt="Main Street" width="300"></img>
+                        </div>
+                    </div>
+                <div className="col">
                     <div className="title">
                         <h2 className="homeTitle">Looking to grow?</h2>
                         <h2 className="homeTitle">Put your business in the heart of historic downtown Westminster, MD!</h2>
@@ -31,6 +36,11 @@ const home = () => {
                                     </ul>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="title">
+                            <img className="homeIMG" src=".\images\AdditionalImages\winter.jpg" alt="Winter" width="300"></img>
                         </div>
                     </div>
                 </div>
