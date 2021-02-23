@@ -30,7 +30,7 @@ const Current = () => {
                     </div>
                     <div className="title-secondary">
                         <ul>
-                            {tenants.map(tenant => (<li tenant key={tenant.id}><a href={tenant.website}>{tenant.tenant}</a></li>))}
+                            {tenants.map(tenant => (<li tenant key={tenant.id}><a href={tenant.website} target="_blank" rel="noopener noreferrer">{tenant.tenant}</a></li>))}
                         </ul>
                     </div>
                     </div>
