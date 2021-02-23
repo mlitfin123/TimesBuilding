@@ -233,6 +233,14 @@ footer{
   visibility: hidden;
   font-size: 0px;
 }
+.homeIMG1 {
+  width: 375px;
+  height: 275px;
+}
+.homeIMG2 {
+  width: 375px;
+  height: 275px;
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -240,12 +248,42 @@ footer{
   display: table;
   clear: both;
 }
-
+@media screen and (max-width: 1500px) {
+  .homeIMG1 {
+    width: 300px;
+    height: 200px;
+  }
+  .homeIMG2 {
+    width: 300px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .homeIMG1 {
+    width: 300px;
+    height: 200px;
+  }
+  .homeIMG2 {
+    width: 300px;
+    height: 200px;
+  }
+  .homeIMG {
+    width: 300px;
+    height: 150px;
+  }
+  .title-secondary {
+    padding: 2px;
+    margin-left: 7%;
+  }
+  
+}
 @media screen and (max-width: 800px) {
   h1{
     font-size: 50px;
   }
-
+  .col {
+    padding: 4px;
+  }
   .title {
     padding-top: 30px;
   }
@@ -256,6 +294,14 @@ footer{
   .homeIMG {
     width: 400px;
     height: 200px;
+  }
+  .homeIMG1 {
+    width: 0px;
+    height: 0px;
+  }
+  .homeIMG2 {
+    width: 0px;
+    height: 0px;
   }
   header{
     font-size: 20px;

@@ -8,11 +8,11 @@ const home = () => {
                 <div>
                     <Nav />
                 </div>
-                <div className="col">
-                        <div className="title">
-                            <img className="homeIMG" src=".\images\AdditionalImages\storefront.jpg" alt="Main Street" width="300"></img>
-                        </div>
+                <div className="col" id="homeIMG1">
+                    <div className="title">
+                        <img className="homeIMG1" src=".\images\AdditionalImages\storefront.jpg" alt="Main Street" width="300"></img>
                     </div>
+                </div>
                 <div className="col">
                     <div className="title">
                         <h2 className="homeTitle">Looking to grow?</h2>
@@ -38,9 +38,9 @@ const home = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col">
+                    <div className="col"  id="homeIMG2">
                         <div className="title">
-                            <img className="homeIMG" src=".\images\AdditionalImages\winter.jpg" alt="Winter" width="300"></img>
+                            <img className="homeIMG2" src=".\images\AdditionalImages\winter.jpg" alt="Winter" width="300"></img>
                         </div>
                     </div>
                 </div>
