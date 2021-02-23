@@ -42,6 +42,7 @@ footer{
   width: 100%;
   text-align: center;
   border-top: 1px solid #080808;
+  padding-bottom: 5px;
 }
 .footer-content{
   font-size: 10px;
@@ -52,6 +53,10 @@ footer{
   text-align: center;
   border-bottom-style: solid;
   padding-bottom: 25px;
+}
+#fbLogo {
+  width: 50px;
+  height: 50px;
 }
 .tenantLabel{
   padding-top: 25px;

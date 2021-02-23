@@ -15,12 +15,12 @@ const contact = () => {
                             Contact us today!
                         </h4>
                         <form className="contactForm">
-                            <div className="contact-content">Email: <a href="mailto:redmapleproperties@comcast.net?subject=The Times Building">Red Maple Properties</a><br></br></div>
+                            <div className="contact-content">Email: <a href="mailto:aquinopropertiesllc@gmail.com?subject=The Times Building">Aquino Properties</a><br></br></div>
                             <div className="contact-content">or call<br></br></div>
-                            <div className="contact-content">(410) 988-2668</div>
+                            <div className="contact-content">410-871-4567 (OFFICE)</div>
                         </form>
                     </div>
-            </div>
+                </div>
             </div>
         </main>
     )

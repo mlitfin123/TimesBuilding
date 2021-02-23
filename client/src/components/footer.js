@@ -46,9 +46,9 @@ const Footer = () => {
                     <Link id="navbarContact" onClick={() => setActivePage('contact')} className={activePage === 'contact' ? 'nav-link active' : 'nav-link'} to="/contact"> Contact</Link>
                 </div>
             <div className="footer-content">
-            <p>Copyright � 2008 <b>Red Maple Properties, LLC</b>&nbsp;&nbsp; All rights reserved.</p>
-            Website courtesy of <a href="http://www.christianparentsforum.com/forums">GrowthByDesignConsulting</a><br></br>
-            Website updated by <a href="https://marksfolio.herokuapp.com/">Mark Litfin</a>
+            <a href="https://www.facebook.com/aquinoproperties" target="_blank" rel="noopener noreferrer"><img id="fbLogo" src="\images\Logos\facebookLogo.png" alt="facebook"></img></a>
+            <p>Copyright � 2021 <b>Aquino Properties, LLC</b>&nbsp;&nbsp; All rights reserved.</p><br></br>
+            Website courtesy of <a href="https://fittotech.net" target="_blank" rel="noopener noreferrer">Fit-to-Tech Technologies</a>
             </div>
         </footer>
     )

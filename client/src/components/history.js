@@ -13,7 +13,7 @@ const history = () => {
             <div>
                 <p className="history-content">               
                 The Times Building was the home of the Time Printing Company which was founded in 1911 and became the Carroll County Times in 1956.  The Times Building has been renovated to maintain the historic charm while being a vibrant business location.<br></br><br></br>
-                Read about the renovation in this Carroll County Times <Link to={"./accessories/timesarticle.pdf"}>article</Link>.
+                Read about the renovation in this Carroll County Times <a href="\accessories\timesarticle.pdf">article</a>.
                 </p>
             </div>
             <div className="history-image-content">

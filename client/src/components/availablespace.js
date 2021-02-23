@@ -51,21 +51,25 @@ const Available = () => {
                 {(offices[0] + offices[1] + offices[2] + offices[3] + offices[4] + offices[5] + offices[6] + offices[7]) < 8 && (
                 <h4 id="available-leases">
                     The Times Building currently has retail or office space availability. View the available space by clicking the available links below. Inquire for further details by clicking <Link to={"./contact"}>HERE</Link>.
+                <br></br>
                 </h4> )
                 }
                 {(firstFloor[0] + firstFloor[1] + firstFloor[2]) !== 3 && (
                 <h4 id="firstFloor" className="flooravailability">
                     There is current 1st Floor availability. Click <Link to={"./1stFloor"}>here</Link> to view more details.
+                <br></br>
                 </h4> )
                 }
                 {(secondFloor[0] + secondFloor[1] + secondFloor[2] + secondFloor[3] + secondFloor[4] + secondFloor[5] + secondFloor[6] + secondFloor[7] + secondFloor[8] + secondFloor[9]) !== 10 && (
                 <h4 id="secondFloor" className="flooravailability">
                     There is current 2nd Floor availability. Click <Link to={"./2ndFloor"}>here</Link> to view more details.
+                <br></br>
                 </h4> )
                 }
                 { basement === -1 && (
                 <h4 id="basement" className="flooravailability">
                     The Basement location is currently available for lease. Click <Link to={"./basement"}>here</Link> to view more details.
+                <br></br>
                 </h4> )
                 }
                 {(mainRetail[0] + mainRetail[1] + mainRetail[2]) !== 3 && (
